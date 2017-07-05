@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// Enum for different types of messages
+/// </summary>
 public enum ErrorType
 {
     error,
@@ -11,6 +13,10 @@ public enum ErrorType
     message
 }
 
+/// <summary>
+/// WIP
+/// Debugging console of the tool
+/// </summary>
 public class ConsoleScript : MonoBehaviour
 {
     public Text consoleText;
@@ -22,6 +28,13 @@ public class ConsoleScript : MonoBehaviour
         consoleButton.onClick.AddListener(GoToError);
     }
 
+    /// <summary>
+    /// Displays the error message in the console
+    /// </summary>
+    /// <param name="type">Type of the error</param>
+    /// <param name="text">The error message</param>
+    /// <param name="tab">Source of the error (definition)</param>
+    /// <param name="objects"></param>
     public void DisplayError(ErrorType type, string text, GameObject tab, List<GameObject> objects)
     {
         consoleText.text = "Console: " +type.ToString() +": " +text;

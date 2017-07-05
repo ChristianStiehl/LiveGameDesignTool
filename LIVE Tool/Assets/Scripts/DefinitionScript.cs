@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// This script controls the locations of interface nodes on a definition
+/// TODO: Rethink the placement of interface nodes/make them interactable
+/// </summary>
 public class DefinitionScript : MonoBehaviour {
     public GameObject referencePoint;
     public List<GameObject> references;
     public List<GameObject> referencePoints;
     private GameObject tempref;
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
 
+    /// <summary>
+    /// Adds a reference point to the definition
+    /// </summary>
+    /// <param name="newref">The reference point to be added</param>
     public void AddReferencePoint(GameObject newref)
     {
         references.Add(newref);
@@ -46,6 +46,10 @@ public class DefinitionScript : MonoBehaviour {
         referencePoints.Add(tempref);
     }
 
+    /// <summary>
+    /// Removes a reference point from the definition
+    /// </summary>
+    /// <param name="removedRef">The reference point to be removed</param>
     public void RemoveReferencePoint(GameObject removedRef)
     {
         for(int i = 0; i < references.Count; i++)
@@ -59,6 +63,9 @@ public class DefinitionScript : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Removes all reference points
+    /// </summary>
     public void ClearReferencePoints()
     {
         for (int i = 0; i < references.Count; i++)

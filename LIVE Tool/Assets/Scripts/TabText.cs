@@ -21,6 +21,9 @@ public class TabText : MonoBehaviour {
         ipf.onEndEdit.AddListener(delegate { UpdateDefinition(); });
     }
 
+    /// <summary>
+    /// Updates the definition name in the model
+    /// </summary>
     public void UpdateDefinition()
     {
         newName = this.GetComponent<Text>().text.ToString();

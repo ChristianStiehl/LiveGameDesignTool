@@ -6,17 +6,27 @@ using System;
 using MM;
 using MMParser;
 /// <summary>
-/// The behind the scenes model and inner workings
+/// Communication between Visual model and technical Micro-Machinations model.
 /// </summary>
 public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Parsing {
-    public MM.Model.Program prog = null;
+    public MM.Model.Program prog = null;//local program (obsolete)
     public MM.Machine machine;
     System.IO.TextWriter output;
     System.IO.TextWriter error;
+    /// <summary>
+    /// Receives error/warning messages from the parser
+    /// TODO: Use the tools own console instead of unity debugger.
+    /// </summary>
+    /// <param name="message">The error message received</param>
     public void receive(MM.Parser.ParserMessage message)
     {
         Debug.Log(message.toString());
     }
+    /// <summary>
+    /// Receives error/warning messages from the runtime model
+    /// TODO: Use the tools own console instead of unity debugger.
+    /// </summary>
+    /// <param name="message">The error message received</param>
     public void receive(MM.Runtime.CheckerMessage message)
     {
         Debug.Log(message.toString());
@@ -26,6 +36,12 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
         machine = new MM.Machine(this, this, output, error);
     }
 
+    /// <summary>
+    /// Adds an edge to the model
+    /// </summary>
+    /// <param name="edgebehavior">The type of edge added (Flow or State)</param>
+    /// <param name="defName">Name of the definition this edge was added to</param>
+    /// <param name="newedgeobj">The unity object of the added edge</param>
     public void AddEdge(Behavior edgebehavior, string defName, GameObject newedgeobj)
     {
         MM.Model.Definition targetDef = machine.getProgram();
@@ -74,6 +90,13 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
         }
     }
 
+    /// <summary>
+    /// Adds a node to the model
+    /// </summary>
+    /// <param name="addedNodeType">Behavior of the new node (Pool, Source, Drain etc.)</param>
+    /// <param name="newNodePos">Position of the new node on screen</param>
+    /// <param name="defName">Name of the definition this node was added to</param>
+    /// <param name="newnodeobj">The unity object of the added node</param>
     public void AddNode(Behavior addedNodeType, Vector2 newNodePos, string defName, GameObject newnodeobj)
     {
         MM.Model.Definition targetDef = machine.getProgram();
@@ -114,7 +137,13 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
                 break;
         }
     }
-    //Update node property functions
+
+    /// <summary>
+    /// Updates the max variable of a specific node
+    /// </summary>
+    /// <param name="newmax">New value for max</param>
+    /// <param name="tabname">Name of the definition the changed node is in</param>
+    /// <param name="updatedNode">The node model object that needs to be changed</param>
     public void UpdateNodeMax(int newmax, string tabname, MM.Model.Node updatedNode)
     {
         if (tabname == "Global")
@@ -132,6 +161,13 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
             }
         }
     }
+
+    /// <summary>
+    /// Updates the add variable of a specific node
+    /// </summary>
+    /// <param name="newadd">New value for add</param>
+    /// <param name="updatedNode">The node model object that needs to be changed</param>
+    /// <param name="tabname">Name of the definition the changed node is in</param>
     public void UpdateNodeAdd(string newadd, MM.Model.Node updatedNode, string tabname)
     {
         if (tabname == "Global")
@@ -149,6 +185,13 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
             }
         }
     }
+
+    /// <summary>
+    /// Updates the typeof variable of a specific node
+    /// </summary>
+    /// <param name="newdefname">The name of the definition typeof needs to be</param>
+    /// <param name="newnodeobj">The node model object that needs to be changed</param>
+    /// <param name="tabname">Name of the definition the changed node is in</param>
     public void UpdateNodeDefinition(string newdefname, MM.Model.Node newnodeobj, string tabname)
     {
         if(newdefname != null)
@@ -198,6 +241,13 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
             }
         }
     }
+
+    /// <summary>
+    /// Updates the how variable of a specific node
+    /// </summary>
+    /// <param name="newhow">New value for how</param>
+    /// <param name="newnodeobj">The node model object that needs to be changed</param>
+    /// <param name="tabname">Name of the definition the changed node is in</param>
     public void UpdateNodeHow(How newhow, MM.Model.Node newnodeobj, string tabname)
     {
         if (tabname == "Global")
@@ -229,6 +279,13 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
             }
         }
     }
+
+    /// <summary>
+    /// Updates the act variable of a specific node
+    /// </summary>
+    /// <param name="newact">New value for act</param>
+    /// <param name="newnodeobj">The node model object that needs to be changed</param>
+    /// <param name="tabname">Name of the definition the changed node is in</param>
     public void UpdateNodeAct(Act newact, MM.Model.Node newnodeobj, string tabname)
     {
         if (tabname == "Global")
@@ -260,6 +317,13 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
             }
         }
     }
+
+    /// <summary>
+    /// Updates the when variable of a specific node
+    /// </summary>
+    /// <param name="newwhen">New value for when</param>
+    /// <param name="newnodeobj">The node model object that needs to be changed</param>
+    /// <param name="tabname">Name of the definition the changed node is in</param>
     public void UpdateNodeWhen(When newwhen, MM.Model.Node newnodeobj, string tabname)
     {
         if (tabname == "Global")
@@ -305,6 +369,13 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
             }
         }
     }
+
+    /// <summary>
+    /// Updates the io variable of a specific node
+    /// </summary>
+    /// <param name="newio">New value for io</param>
+    /// <param name="newnodeobj">The node model object that needs to be changed</param>
+    /// <param name="tabname">Name of the definition the changed node is in</param>
     public void UpdateNodeIO(IO newio, MM.Model.Node newnodeobj, string tabname)
     {
         if (tabname == "Global")
@@ -350,6 +421,13 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
             }
         }
     }
+
+    /// <summary>
+    /// Updates the at variable of a specific node
+    /// </summary>
+    /// <param name="newat">New value for at</param>
+    /// <param name="newnodeobj">The node model object that needs to be changed</param>
+    /// <param name="tabname">Name of the definition the changed node is in</param>
     public void UpdateNodeAt(int newat, MM.Model.Node newnodeobj, string tabname)
     {
         if (tabname == "Global")
@@ -367,6 +445,13 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
             }
         }
     }
+
+    /// <summary>
+    /// Updates the name of a specific node
+    /// </summary>
+    /// <param name="newname">New name</param>
+    /// <param name="newnodeobj">The node model object that needs to be changed</param>
+    /// <param name="tabname">Name of the definition the changed node is in</param>
     public void UpdateNodeName(string newname, MM.Model.Node newnodeobj, string tabname)
     {
         if (tabname == "Global")
@@ -384,6 +469,13 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
             }
         }
     }
+
+    /// <summary>
+    /// Updates the behavior of a specific node
+    /// </summary>
+    /// <param name="newtype">New behavior</param>
+    /// <param name="newnodeobj">The node model object that needs to be changed</param>
+    /// <param name="tabname">Name of the definition the changed node is in</param>
     public void UpdateNodeBehavior(Behavior newtype, MM.Model.Node newnodeobj, string tabname)
     {
         if (tabname == "Global")
@@ -445,6 +537,13 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
             }
         }
     }
+
+    /// <summary>
+    /// Updates the position of a specific node
+    /// </summary>
+    /// <param name="newPos">New position</param>
+    /// <param name="newnodeobj">The node model object that needs to be changed</param>
+    /// <param name="tabname">Name of the definition the changed node is in</param>
     public void UpdateNodePosition(Vector2 newPos, string tabname, MM.Model.Node newnodeobj)
     {
         if (tabname == "Global")
@@ -471,6 +570,12 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
         }
     }
 
+    /// <summary>
+    /// Updates the name of a specific edge
+    /// </summary>
+    /// <param name="newname">New name</param>
+    /// <param name="newedgeobj">The edge model object that needs to be changed</param>
+    /// <param name="tabname">Name of the definition the changed edge is in</param>
     public void UpdateEdgeName(string newname, MM.Model.Edge newedgeobj, string tabname)
     {
         if (tabname == "Global")
@@ -489,6 +594,12 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
         }
     }
 
+    /// <summary>
+    /// Updates the source of a specific edge
+    /// </summary>
+    /// <param name="newsourcename">Name of the new source</param>
+    /// <param name="newedgeobj">The edge model object that needs to be changed</param>
+    /// <param name="tabname">Name of the definition the changed edge is in</param>
     public void UpdateEdgeSource(string newsourcename, MM.Model.Edge newedgeobj, string tabname)
     {
         if (tabname == "Global")
@@ -538,6 +649,12 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
         }
     }
 
+    /// <summary>
+    /// Updates the target of a specific edge
+    /// </summary>
+    /// <param name="newtargetname">Name of the new target</param>
+    /// <param name="newedgeobj">The edge model object that needs to be changed</param>
+    /// <param name="tabname">Name of the definition the changed edge is in</param>
     public void UpdateEdgeTarget(string newtargetname, MM.Model.Edge newedgeobj, string tabname)
     {
         if (tabname == "Global")
@@ -587,6 +704,12 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
         }
     }
 
+    /// <summary>
+    /// Updates the expression of a specific edge
+    /// </summary>
+    /// <param name="newexpression">New expression</param>
+    /// <param name="newedgeobj">The edge model object that needs to be changed</param>
+    /// <param name="tabname">Name of the definition the changed edge is in</param>
     public void UpdateEdgeExpression(string newexpression, MM.Model.Edge newedgeobj, string tabname)
     {
         if (tabname == "Global")
@@ -604,9 +727,10 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
             }
         }
     }
-
     
-
+    /// <summary>
+    /// Creates the program in the machine
+    /// </summary>
     public void AddProgram()
     {
         /*MM.Model.Location tloc = new MM.Model.Location();
@@ -615,6 +739,11 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
         machine.getProgram() = new MM.Model.Program(s);*/
         machine.createProgram();
     }
+
+    /// <summary>
+    /// Checks if there is a program (if not calls AddProgram) then adds a definition to it.
+    /// </summary>
+    /// <param name="name"></param>
     public void AddDefinition(string name)
     {
         if (machine.getProgram() == null)
@@ -630,6 +759,12 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
         def = machine.addDefinition(machine.getProgram(), machine.getProgram().getSource());
         machine.setDefinitionName(machine.getProgram(), def, name);
     }
+
+    /// <summary>
+    /// Updates the name of a definition
+    /// </summary>
+    /// <param name="oldName">Old name of the definition used to identify it</param>
+    /// <param name="newName">New name of the definition</param>
     public void UpdateDefinition(string oldName, string newName)
     {
         foreach(MM.Model.Definition d in machine.getProgram().getDefinitions())
@@ -641,6 +776,10 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
         }
     }
 
+    /// <summary>
+    /// Removes the target definition from the model
+    /// </summary>
+    /// <param name="defname">Definition name that needs to be removed</param>
     public void DeleteDefinition(string defname)
     {
         foreach (MM.Model.Definition d in machine.getProgram().getDefinitions())
@@ -652,6 +791,11 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
         }
     }
 
+    /// <summary>
+    /// Removes the target node from the model
+    /// </summary>
+    /// <param name="removednode">Node object that needs to be removed</param>
+    /// <param name="tabname">Definition name containing the target node</param>
     public void DeleteNode(MM.Model.Node removednode, string tabname)
     {
         if(tabname == "Global")
@@ -666,6 +810,12 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
                 }
          }
     }
+
+    /// <summary>
+    /// Removes the target flow edge from the model
+    /// </summary>
+    /// <param name="removededge">Flow edge object that needs to be removed</param>
+    /// <param name="tabname">Definition name containing the target edge</param>
     public void DeleteFlowEdge(MM.Model.FlowEdge removededge, string tabname)
     {
         if (tabname == "Global")
@@ -681,6 +831,11 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
         }
     }
 
+    /// <summary>
+    /// Removes the target state edge from the model
+    /// </summary>
+    /// <param name="removededge">State edge object that needs to be removed</param>
+    /// <param name="tabname">Definition name containing the target edge</param>
     public void DeleteStateEdge(MM.Model.StateEdge removededge, string tabname)
     {
         if (tabname == "Global")
@@ -696,16 +851,28 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
         }
     }
 
+    /// <summary>
+    /// Set local program to p
+    /// </summary>
+    /// <param name="p">Micro-Machinations model program </param>
     public void SetProgram(MM.Model.Program p)
     {
         prog = p;
     }
 
+    /// <summary>
+    /// Set local machine to m
+    /// </summary>
+    /// <param name="m">Micro-Machinations machine</param>
     public void SetMachine(MM.Machine m)
     {
         machine = m;
     }
 
+    /// <summary>
+    /// Print model to text file 
+    /// </summary>
+    /// <param name="filepath">File path for text file</param>
     public void ExportToFile(string filepath)
     {
         if (machine.getProgram() != null)

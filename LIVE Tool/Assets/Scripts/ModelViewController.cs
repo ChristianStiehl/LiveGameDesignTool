@@ -297,7 +297,7 @@ public class ModelViewController : MonoBehaviour
                 }
             }
         }
-	}
+	}//end Update
 
     /// <summary>
     /// Changes the selected type of the MVC
@@ -333,7 +333,8 @@ public class ModelViewController : MonoBehaviour
         {
             GetComponent<ScrollRect>().enabled = false;
         }
-    }
+    }//end ChangeType
+
     /// <summary>
     /// Checks if the mouse is over the transform of the grid
     /// </summary>
@@ -353,7 +354,8 @@ public class ModelViewController : MonoBehaviour
         {
             return false;
         }
-    }
+    }//end isMouseOverGrid
+
     /// <summary>
     /// Checks if the mouse is not over one of the Nodes
     /// </summary>
@@ -398,7 +400,8 @@ public class ModelViewController : MonoBehaviour
             }
         }
         return true;
-    }
+    }//end isMouseNotOverChildren
+
     /// <summary>
     /// Function to hide the node and endge inspectors
     /// </summary>
@@ -419,14 +422,21 @@ public class ModelViewController : MonoBehaviour
         nodeInspector.Deselect();
         edgeInspector.Deselect();
     }
-
+    /// <summary>
+    /// Tells the edge inspector to select the given object and tells the node inspector to deselect.
+    /// </summary>
+    /// <param name="selectedEdge">The selected edge</param>
     public void SelectEdge(GameObject selectedEdge)
     {
         selectedObject = selectedEdge;
         edgeInspector.Select(selectedObject);
         nodeInspector.Deselect();
     }
-
+    /// <summary>
+    /// Adds a visual node to the diagram 
+    /// </summary>
+    /// <param name="newbehavior">The behavior of the new node</param>
+    /// <param name="pos">The position of the new node</param>
     public void AddNode(Behavior newbehavior, Vector2 pos)
     {
         //add the visual node to the view
@@ -434,12 +444,18 @@ public class ModelViewController : MonoBehaviour
         //set the visual and type of the node to the selected node
         tempNode.GetComponent<SelectNodeButton>().ChangeBehavior(newbehavior);
     }
-
+    /// <summary>
+    /// Adds a visual flow edge to the diagram
+    /// </summary>
+    /// <param name="pos">Starting position of the new flow edge</param>
     public void AddEdge(Vector2 pos)
     {
         tempEdge = Instantiate(edgePrefab, pos, grid.transform.rotation, view) as GameObject;
     }
-
+    /// <summary>
+    /// Adds a visual state edge to the diagram
+    /// </summary>
+    /// <param name="pos">Starting position of the new state edge</param>
     public void AddState(Vector2 pos)
     {
         tempState = Instantiate(statePrefab, pos, grid.transform.rotation, view) as GameObject;

@@ -110,6 +110,10 @@ public class TabManager : MonoBehaviour {
             }
         }
     }
+    /// <summary>
+    /// Adds a tab to the diagram
+    /// </summary>
+    /// <param name="name">name of the new tab</param>
     public void AddTab(string name)
     {
         EventManager.TriggerEvent("tabAdded");
@@ -149,6 +153,10 @@ public class TabManager : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// returns the active tab
+    /// </summary>
+    /// <returns>Returns the active tab</returns>
     public GameObject GetLastTab()
     {
         return tempObj;

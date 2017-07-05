@@ -388,6 +388,9 @@ public class NodeInspector : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Updates the position of the selected node
+    /// </summary>
     public void UpdatePosition()
     {
         if (selectedNode)

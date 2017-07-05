@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Visual Edge Object logic
+/// </summary>
 public class SelectEdgeButton : MonoBehaviour
 {
     public List<RectTransform> edgeCorners;
@@ -127,6 +130,12 @@ public class SelectEdgeButton : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Adds a new corner point to the edge
+    /// TODO: Corner points should be moveable
+    /// </summary>
+    /// <param name="newPoint">Position of the new point</param>
+    /// <param name="parent">Parent of the new point (important for target/source)</param>
     public void AddEdgePoint(Vector2 newPoint, GameObject parent)
     {
         if(parent == null)
@@ -192,6 +201,12 @@ public class SelectEdgeButton : MonoBehaviour
         edgeLines.Add(tempEdge);
     }
 
+    /// <summary>
+    /// Stretches the edge image between two points (Important: Edges use RawImages for UV management!)
+    /// </summary>
+    /// <param name="_sprite">The recttransform that needs to be stretched</param>
+    /// <param name="_initialPosition">first point</param>
+    /// <param name="_finalPosition">second point</param>
     public void Stretch(RectTransform _sprite, Vector2 _initialPosition, Vector2 _finalPosition)
     {
         Vector2 centerPos = (_initialPosition + _finalPosition) / 2f;
@@ -209,6 +224,9 @@ public class SelectEdgeButton : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Completes the edge (stops stretching to mouse)
+    /// </summary>
     public void StopCurrentEdge()
     {
         edgeLines.Remove(tempEdge);
@@ -216,11 +234,19 @@ public class SelectEdgeButton : MonoBehaviour
         isCompleted = true;
     }
 
+    /// <summary>
+    /// deselects
+    /// </summary>
     public void Deselect()
     {
         isSelected = false;
     }
 
+    /// <summary>
+    /// Updates the source of this edge
+    /// </summary>
+    /// <param name="newSourceName">Name of the new source</param>
+    /// <returns>Returns true if a node with the given name was found and the source is updated</returns>
     public bool UpdateSource(string newSourceName)
     {
         GameObject[] tempArr = GameObject.FindGameObjectsWithTag("Node");
@@ -278,6 +304,11 @@ public class SelectEdgeButton : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// Updates the target node of this edge
+    /// </summary>
+    /// <param name="newTargetName">Name of the new target</param>
+    /// <returns>Returns true if a node with the given name was found and the target is updated</returns>
     public bool UpdateTarget(string newTargetName)
     {
         GameObject[] tempArr = GameObject.FindGameObjectsWithTag("Node");

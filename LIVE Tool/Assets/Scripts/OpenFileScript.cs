@@ -9,6 +9,9 @@ using MM.Model;
 using MM;
 using System;
 
+/// <summary>
+/// Opens a micro-machinations file and creates a visual diagram from it
+/// </summary>
 public class OpenFileScript : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Parsing
 {
     public UnityEngine.UI.Button yourButton;
@@ -27,10 +30,20 @@ public class OpenFileScript : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Pars
     public List<GameObject> tabs = new List<GameObject>();
     int index = 1;
 
+    /// <summary>
+    /// Receives error/warning messages from the parser
+    /// TODO: Use the tools own console instead of unity debugger.
+    /// </summary>
+    /// <param name="message">The error message received</param>
     public void receive(MM.Parser.ParserMessage message)
     {
         Debug.Log(message.toString());
     }
+    /// <summary>
+    /// Receives error/warning messages from the runtime model
+    /// TODO: Use the tools own console instead of unity debugger.
+    /// </summary>
+    /// <param name="message">The error message received</param>
     public void receive(MM.Runtime.CheckerMessage message)
     {
         Debug.Log(message.toString());
@@ -46,7 +59,7 @@ public class OpenFileScript : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Pars
         btn.onClick.AddListener(TaskOnClick);
     }
     /// <summary>
-    /// When clicked opens the file browser
+    /// When clicked opens the file browser, if a valid path is selected imports a micro-machinations file and creates visual diagram
     /// </summary>
     void TaskOnClick()
     {

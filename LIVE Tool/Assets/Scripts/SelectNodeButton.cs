@@ -280,6 +280,10 @@ public class SelectNodeButton : MonoBehaviour {
             UpdateDefinitionReferences();
         }
     }
+
+    /// <summary>
+    /// Updates the node interfaces on this nodes definition
+    /// </summary>
     public void UpdateDefinitionReferences()
     {
         definition.GetComponent<DefinitionScript>().ClearReferencePoints();
