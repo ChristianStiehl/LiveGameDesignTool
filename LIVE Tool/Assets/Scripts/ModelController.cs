@@ -733,10 +733,6 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
     /// </summary>
     public void AddProgram()
     {
-        /*MM.Model.Location tloc = new MM.Model.Location();
-        MM.Model.Location2D vloc = new MM.Model.Location2D();
-        MM.Model.Source s = new MM.Model.Source(tloc, vloc);
-        machine.getProgram() = new MM.Model.Program(s);*/
         machine.createProgram();
     }
 
@@ -750,11 +746,6 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
         {
             AddProgram();
         }
-        /*
-        MM.Model.Source s2 = machine.getProgram().getSource();
-        MM.Model.Name n = new MM.Model.Name(s2, name);
-        MM.Model.Definition d = new MM.Model.Definition(s2, n);
-        machine.getProgram().addElement(d);*/
         MM.Model.Definition def;
         def = machine.addDefinition(machine.getProgram(), machine.getProgram().getSource());
         machine.setDefinitionName(machine.getProgram(), def, name);
@@ -877,10 +868,6 @@ public class ModelController : MonoBehaviour, MM.Runtime.Checking, MM.Parser.Par
     {
         if (machine.getProgram() != null)
         {
-            /*RMPatch.StringBuffer buf = new RMPatch.StringBuffer();
-            buf.clear();
-            prog.toString(buf, 0);
-            System.IO.File.WriteAllText(filepath, buf.toString());*/
             machine.storeProgram(filepath);
         }
         else

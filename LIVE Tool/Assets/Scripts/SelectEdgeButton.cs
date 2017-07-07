@@ -77,34 +77,40 @@ public class SelectEdgeButton : MonoBehaviour
 
     private void Update()
     {
-        if(isCompleted && (sourceCorner == null || targetCorner == null))
-        {
-            //Destroy(this.gameObject);
-        }
-        else if(edgeCorners.Count > 0)
+        if(edgeCorners.Count > 0)
         {
             for (int i = 0; i < edgeLines.Count; i++)
             {
                 if (i + 1 < edgeCorners.Count)
                 {
                     Stretch(edgeLines[i], edgeCorners[i].position, edgeCorners[i + 1].position);
-                    if(i+1 == edgeCorners.Count / 2)
+                    if(i+1 == edgeCorners.Count / 2) //checks for middle of the edge for label/expression text placement
                     {
                         Stretch(label.rectTransform, edgeCorners[i].position, edgeCorners[i + 1].position);
                         label.rectTransform.localScale = new Vector3(1, 1, 1);
-                        label.rectTransform.position += new Vector3(0, -10, 0); //TODO fix offset
+                        label.rectTransform.position += new Vector3(0, -10, 0);
                         label.rectTransform.rotation = new Quaternion(0, 0, 0, 0);
                         Stretch(exp.rectTransform, edgeCorners[i].position, edgeCorners[i + 1].position);
                         exp.rectTransform.localScale = new Vector3(1, 1, 1);
                         exp.rectTransform.position += new Vector3(0, 10, 0);
                         exp.rectTransform.rotation = new Quaternion(0, 0, 0, 0);
                     }
-
+                    //fix arrow position and rotation. offset by 25 from middle of nodes
                     edgeArrow.position = edgeCorners[i + 1].position;
                     Vector3 rot = edgeCorners[i + 1].position - edgeCorners[i].position;
                     rot.Normalize();
                     edgeArrow.transform.right = rot;
-                    Vector3 scaler = new Vector3(25, 25, 25);
+                    Vector3 scaler;
+                    //smaller offset for interface nodes
+                    //Potentially TODO: set custom offsets for all types of nodes.
+                    if (targetObj != null && targetObj.tag == "ReferenceInterface")
+                    {
+                        scaler = new Vector3(10, 10, 10);
+                    }
+                    else
+                    {
+                        scaler = new Vector3(25, 25, 25);
+                    }
                     scaler.Scale(rot);
                     edgeArrow.position -= scaler;
                 }
