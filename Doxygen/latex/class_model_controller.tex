@@ -1,0 +1,607 @@
+\hypertarget{class_model_controller}{}\section{Model\+Controller Class Reference}
+\label{class_model_controller}\index{Model\+Controller@{Model\+Controller}}
+
+
+Communication between Visual model and technical Micro-\/\+Machinations model.  
+
+
+Inheritance diagram for Model\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_model_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_model_controller_ace07b89fa66aa3855d9fd888e98d3c07}{receive} (M\+M.\+Parser.\+Parser\+Message message)
+\begin{DoxyCompactList}\small\item\em Receives error/warning messages from the parser T\+O\+DO\+: Use the tools own console instead of unity debugger. \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_ad66a01d17f0bdff7f3a668e8dd37fd43}{receive} (M\+M.\+Runtime.\+Checker\+Message message)
+\begin{DoxyCompactList}\small\item\em Receives error/warning messages from the runtime model T\+O\+DO\+: Use the tools own console instead of unity debugger. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_model_controller_aeb277810748a80f9a3b9478d92c91b7b}\label{class_model_controller_aeb277810748a80f9a3b9478d92c91b7b}} 
+void {\bfseries Start} ()
+\item 
+void \hyperlink{class_model_controller_add55c5cac76924f59e57adffee93ae79}{Add\+Edge} (Behavior edgebehavior, string def\+Name, Game\+Object newedgeobj)
+\begin{DoxyCompactList}\small\item\em Adds an edge to the model \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_a19cbb949bcd04111795784724d883975}{Add\+Node} (Behavior added\+Node\+Type, Vector2 new\+Node\+Pos, string def\+Name, Game\+Object newnodeobj)
+\begin{DoxyCompactList}\small\item\em Adds a node to the model \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_a7bdefba3d9a2445710046462819bb5dd}{Update\+Node\+Max} (int newmax, string tabname, M\+M.\+Model.\+Node updated\+Node)
+\begin{DoxyCompactList}\small\item\em Updates the max variable of a specific node \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_a0e667937f2c81e87b6fa8a501aea09b9}{Update\+Node\+Add} (string newadd, M\+M.\+Model.\+Node updated\+Node, string tabname)
+\begin{DoxyCompactList}\small\item\em Updates the add variable of a specific node \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_a98a3ea019f3d366a0f91d3536f96a1c3}{Update\+Node\+Definition} (string newdefname, M\+M.\+Model.\+Node newnodeobj, string tabname)
+\begin{DoxyCompactList}\small\item\em Updates the typeof variable of a specific node \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_ae9cfb758e08532565a361a02cdad420f}{Update\+Node\+How} (How newhow, M\+M.\+Model.\+Node newnodeobj, string tabname)
+\begin{DoxyCompactList}\small\item\em Updates the how variable of a specific node \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_add94ec175f5f81a3acb57a33f958c3a5}{Update\+Node\+Act} (Act newact, M\+M.\+Model.\+Node newnodeobj, string tabname)
+\begin{DoxyCompactList}\small\item\em Updates the act variable of a specific node \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_a008c60f8bb31f6525f116b7b9cd7107b}{Update\+Node\+When} (When newwhen, M\+M.\+Model.\+Node newnodeobj, string tabname)
+\begin{DoxyCompactList}\small\item\em Updates the when variable of a specific node \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_aefda67a5dfdc0b8dd5dfc8811d42a52a}{Update\+Node\+IO} (IO newio, M\+M.\+Model.\+Node newnodeobj, string tabname)
+\begin{DoxyCompactList}\small\item\em Updates the io variable of a specific node \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_acd6773a9b3bd6bacec227104838d5403}{Update\+Node\+At} (int newat, M\+M.\+Model.\+Node newnodeobj, string tabname)
+\begin{DoxyCompactList}\small\item\em Updates the at variable of a specific node \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_a2bc7d852f482d7190094602734029097}{Update\+Node\+Name} (string newname, M\+M.\+Model.\+Node newnodeobj, string tabname)
+\begin{DoxyCompactList}\small\item\em Updates the name of a specific node \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_a5b2ce36e6894c3e41f42b4f9dc0d9b06}{Update\+Node\+Behavior} (Behavior newtype, M\+M.\+Model.\+Node newnodeobj, string tabname)
+\begin{DoxyCompactList}\small\item\em Updates the behavior of a specific node \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_a184dc2424e87afbec8dc12e99f2f2451}{Update\+Node\+Position} (Vector2 new\+Pos, string tabname, M\+M.\+Model.\+Node newnodeobj)
+\begin{DoxyCompactList}\small\item\em Updates the position of a specific node \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_ae55705c9c541f326757e2a4ba0310af0}{Update\+Edge\+Name} (string newname, M\+M.\+Model.\+Edge newedgeobj, string tabname)
+\begin{DoxyCompactList}\small\item\em Updates the name of a specific edge \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_aaa7910a28a9feb7e6086cec6aba33613}{Update\+Edge\+Source} (string newsourcename, M\+M.\+Model.\+Edge newedgeobj, string tabname)
+\begin{DoxyCompactList}\small\item\em Updates the source of a specific edge \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_afc082aa500c60243108b67e509d62ef2}{Update\+Edge\+Target} (string newtargetname, M\+M.\+Model.\+Edge newedgeobj, string tabname)
+\begin{DoxyCompactList}\small\item\em Updates the target of a specific edge \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_a06912800fa56c444b0a54a2e777460a0}{Update\+Edge\+Expression} (string newexpression, M\+M.\+Model.\+Edge newedgeobj, string tabname)
+\begin{DoxyCompactList}\small\item\em Updates the expression of a specific edge \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_a366347bcb88a5d9741341cb42d9617b6}{Add\+Program} ()
+\begin{DoxyCompactList}\small\item\em Creates the program in the machine \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_ae0ed52e43c07b4f6ed37488d5e3bd5e0}{Add\+Definition} (string name)
+\begin{DoxyCompactList}\small\item\em Checks if there is a program (if not calls Add\+Program) then adds a definition to it. \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_ad8870c7c6be199c58b77cb4f3f666bea}{Update\+Definition} (string old\+Name, string new\+Name)
+\begin{DoxyCompactList}\small\item\em Updates the name of a definition \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_a6a33ac19aff3ce293c7c2e4255e50470}{Delete\+Definition} (string defname)
+\begin{DoxyCompactList}\small\item\em Removes the target definition from the model \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_ad9f66266f49a332182e57d2368801e5f}{Delete\+Node} (M\+M.\+Model.\+Node removednode, string tabname)
+\begin{DoxyCompactList}\small\item\em Removes the target node from the model \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_af810eecc43d27f5790958b9900ff1215}{Delete\+Flow\+Edge} (M\+M.\+Model.\+Flow\+Edge removededge, string tabname)
+\begin{DoxyCompactList}\small\item\em Removes the target flow edge from the model \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_aa941845548865a4f06a78537f78ec236}{Delete\+State\+Edge} (M\+M.\+Model.\+State\+Edge removededge, string tabname)
+\begin{DoxyCompactList}\small\item\em Removes the target state edge from the model \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_a992f56918cbedc3e57c22d5365eee9cb}{Set\+Program} (M\+M.\+Model.\+Program p)
+\begin{DoxyCompactList}\small\item\em Set local program to p \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_a9ccde31addae7d655b85fb38872aa3ea}{Set\+Machine} (M\+M.\+Machine m)
+\begin{DoxyCompactList}\small\item\em Set local machine to m \end{DoxyCompactList}\item 
+void \hyperlink{class_model_controller_a961f8ecc991434e6751ddc1f63864509}{Export\+To\+File} (string filepath)
+\begin{DoxyCompactList}\small\item\em Print model to text file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_model_controller_af756f6d794d6ed6e8a5537eeb36a4d35}\label{class_model_controller_af756f6d794d6ed6e8a5537eeb36a4d35}} 
+M\+M.\+Model.\+Program {\bfseries prog} = null
+\item 
+\mbox{\Hypertarget{class_model_controller_aba32734969a12343eb585ca8256bbcd9}\label{class_model_controller_aba32734969a12343eb585ca8256bbcd9}} 
+M\+M.\+Machine {\bfseries machine}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Communication between Visual model and technical Micro-\/\+Machinations model. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model_controller_ae0ed52e43c07b4f6ed37488d5e3bd5e0}\label{class_model_controller_ae0ed52e43c07b4f6ed37488d5e3bd5e0}} 
+\index{Model\+Controller@{Model\+Controller}!Add\+Definition@{Add\+Definition}}
+\index{Add\+Definition@{Add\+Definition}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Add\+Definition()}{AddDefinition()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Add\+Definition (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Checks if there is a program (if not calls Add\+Program) then adds a definition to it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_add55c5cac76924f59e57adffee93ae79}\label{class_model_controller_add55c5cac76924f59e57adffee93ae79}} 
+\index{Model\+Controller@{Model\+Controller}!Add\+Edge@{Add\+Edge}}
+\index{Add\+Edge@{Add\+Edge}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Add\+Edge()}{AddEdge()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Add\+Edge (\begin{DoxyParamCaption}\item[{Behavior}]{edgebehavior,  }\item[{string}]{def\+Name,  }\item[{Game\+Object}]{newedgeobj }\end{DoxyParamCaption})}
+
+
+
+Adds an edge to the model 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edgebehavior} & The type of edge added (Flow or State)\\
+\hline
+{\em def\+Name} & Name of the definition this edge was added to\\
+\hline
+{\em newedgeobj} & The unity object of the added edge\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_a19cbb949bcd04111795784724d883975}\label{class_model_controller_a19cbb949bcd04111795784724d883975}} 
+\index{Model\+Controller@{Model\+Controller}!Add\+Node@{Add\+Node}}
+\index{Add\+Node@{Add\+Node}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Add\+Node()}{AddNode()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Add\+Node (\begin{DoxyParamCaption}\item[{Behavior}]{added\+Node\+Type,  }\item[{Vector2}]{new\+Node\+Pos,  }\item[{string}]{def\+Name,  }\item[{Game\+Object}]{newnodeobj }\end{DoxyParamCaption})}
+
+
+
+Adds a node to the model 
+
+
+\begin{DoxyParams}{Parameters}
+{\em added\+Node\+Type} & Behavior of the new node (Pool, Source, Drain etc.)\\
+\hline
+{\em new\+Node\+Pos} & Position of the new node on screen\\
+\hline
+{\em def\+Name} & Name of the definition this node was added to\\
+\hline
+{\em newnodeobj} & The unity object of the added node\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_a366347bcb88a5d9741341cb42d9617b6}\label{class_model_controller_a366347bcb88a5d9741341cb42d9617b6}} 
+\index{Model\+Controller@{Model\+Controller}!Add\+Program@{Add\+Program}}
+\index{Add\+Program@{Add\+Program}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Add\+Program()}{AddProgram()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Add\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates the program in the machine 
+
+\mbox{\Hypertarget{class_model_controller_a6a33ac19aff3ce293c7c2e4255e50470}\label{class_model_controller_a6a33ac19aff3ce293c7c2e4255e50470}} 
+\index{Model\+Controller@{Model\+Controller}!Delete\+Definition@{Delete\+Definition}}
+\index{Delete\+Definition@{Delete\+Definition}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Delete\+Definition()}{DeleteDefinition()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Delete\+Definition (\begin{DoxyParamCaption}\item[{string}]{defname }\end{DoxyParamCaption})}
+
+
+
+Removes the target definition from the model 
+
+
+\begin{DoxyParams}{Parameters}
+{\em defname} & Definition name that needs to be removed\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_af810eecc43d27f5790958b9900ff1215}\label{class_model_controller_af810eecc43d27f5790958b9900ff1215}} 
+\index{Model\+Controller@{Model\+Controller}!Delete\+Flow\+Edge@{Delete\+Flow\+Edge}}
+\index{Delete\+Flow\+Edge@{Delete\+Flow\+Edge}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Delete\+Flow\+Edge()}{DeleteFlowEdge()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Delete\+Flow\+Edge (\begin{DoxyParamCaption}\item[{M\+M.\+Model.\+Flow\+Edge}]{removededge,  }\item[{string}]{tabname }\end{DoxyParamCaption})}
+
+
+
+Removes the target flow edge from the model 
+
+
+\begin{DoxyParams}{Parameters}
+{\em removededge} & Flow edge object that needs to be removed\\
+\hline
+{\em tabname} & Definition name containing the target edge\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_ad9f66266f49a332182e57d2368801e5f}\label{class_model_controller_ad9f66266f49a332182e57d2368801e5f}} 
+\index{Model\+Controller@{Model\+Controller}!Delete\+Node@{Delete\+Node}}
+\index{Delete\+Node@{Delete\+Node}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Delete\+Node()}{DeleteNode()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Delete\+Node (\begin{DoxyParamCaption}\item[{M\+M.\+Model.\+Node}]{removednode,  }\item[{string}]{tabname }\end{DoxyParamCaption})}
+
+
+
+Removes the target node from the model 
+
+
+\begin{DoxyParams}{Parameters}
+{\em removednode} & Node object that needs to be removed\\
+\hline
+{\em tabname} & Definition name containing the target node\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_aa941845548865a4f06a78537f78ec236}\label{class_model_controller_aa941845548865a4f06a78537f78ec236}} 
+\index{Model\+Controller@{Model\+Controller}!Delete\+State\+Edge@{Delete\+State\+Edge}}
+\index{Delete\+State\+Edge@{Delete\+State\+Edge}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Delete\+State\+Edge()}{DeleteStateEdge()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Delete\+State\+Edge (\begin{DoxyParamCaption}\item[{M\+M.\+Model.\+State\+Edge}]{removededge,  }\item[{string}]{tabname }\end{DoxyParamCaption})}
+
+
+
+Removes the target state edge from the model 
+
+
+\begin{DoxyParams}{Parameters}
+{\em removededge} & State edge object that needs to be removed\\
+\hline
+{\em tabname} & Definition name containing the target edge\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_a961f8ecc991434e6751ddc1f63864509}\label{class_model_controller_a961f8ecc991434e6751ddc1f63864509}} 
+\index{Model\+Controller@{Model\+Controller}!Export\+To\+File@{Export\+To\+File}}
+\index{Export\+To\+File@{Export\+To\+File}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Export\+To\+File()}{ExportToFile()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Export\+To\+File (\begin{DoxyParamCaption}\item[{string}]{filepath }\end{DoxyParamCaption})}
+
+
+
+Print model to text file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & File path for text file\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_ace07b89fa66aa3855d9fd888e98d3c07}\label{class_model_controller_ace07b89fa66aa3855d9fd888e98d3c07}} 
+\index{Model\+Controller@{Model\+Controller}!receive@{receive}}
+\index{receive@{receive}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{receive()}{receive()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Model\+Controller.\+receive (\begin{DoxyParamCaption}\item[{M\+M.\+Parser.\+Parser\+Message}]{message }\end{DoxyParamCaption})}
+
+
+
+Receives error/warning messages from the parser T\+O\+DO\+: Use the tools own console instead of unity debugger. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The error message received\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_ad66a01d17f0bdff7f3a668e8dd37fd43}\label{class_model_controller_ad66a01d17f0bdff7f3a668e8dd37fd43}} 
+\index{Model\+Controller@{Model\+Controller}!receive@{receive}}
+\index{receive@{receive}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{receive()}{receive()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Model\+Controller.\+receive (\begin{DoxyParamCaption}\item[{M\+M.\+Runtime.\+Checker\+Message}]{message }\end{DoxyParamCaption})}
+
+
+
+Receives error/warning messages from the runtime model T\+O\+DO\+: Use the tools own console instead of unity debugger. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The error message received\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_a9ccde31addae7d655b85fb38872aa3ea}\label{class_model_controller_a9ccde31addae7d655b85fb38872aa3ea}} 
+\index{Model\+Controller@{Model\+Controller}!Set\+Machine@{Set\+Machine}}
+\index{Set\+Machine@{Set\+Machine}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Set\+Machine()}{SetMachine()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Set\+Machine (\begin{DoxyParamCaption}\item[{M\+M.\+Machine}]{m }\end{DoxyParamCaption})}
+
+
+
+Set local machine to m 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Micro-\/\+Machinations machine\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_a992f56918cbedc3e57c22d5365eee9cb}\label{class_model_controller_a992f56918cbedc3e57c22d5365eee9cb}} 
+\index{Model\+Controller@{Model\+Controller}!Set\+Program@{Set\+Program}}
+\index{Set\+Program@{Set\+Program}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Set\+Program()}{SetProgram()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Set\+Program (\begin{DoxyParamCaption}\item[{M\+M.\+Model.\+Program}]{p }\end{DoxyParamCaption})}
+
+
+
+Set local program to p 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Micro-\/\+Machinations model program \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_ad8870c7c6be199c58b77cb4f3f666bea}\label{class_model_controller_ad8870c7c6be199c58b77cb4f3f666bea}} 
+\index{Model\+Controller@{Model\+Controller}!Update\+Definition@{Update\+Definition}}
+\index{Update\+Definition@{Update\+Definition}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Definition()}{UpdateDefinition()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Update\+Definition (\begin{DoxyParamCaption}\item[{string}]{old\+Name,  }\item[{string}]{new\+Name }\end{DoxyParamCaption})}
+
+
+
+Updates the name of a definition 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Name} & Old name of the definition used to identify it\\
+\hline
+{\em new\+Name} & New name of the definition\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_a06912800fa56c444b0a54a2e777460a0}\label{class_model_controller_a06912800fa56c444b0a54a2e777460a0}} 
+\index{Model\+Controller@{Model\+Controller}!Update\+Edge\+Expression@{Update\+Edge\+Expression}}
+\index{Update\+Edge\+Expression@{Update\+Edge\+Expression}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Edge\+Expression()}{UpdateEdgeExpression()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Update\+Edge\+Expression (\begin{DoxyParamCaption}\item[{string}]{newexpression,  }\item[{M\+M.\+Model.\+Edge}]{newedgeobj,  }\item[{string}]{tabname }\end{DoxyParamCaption})}
+
+
+
+Updates the expression of a specific edge 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newexpression} & New expression\\
+\hline
+{\em newedgeobj} & The edge model object that needs to be changed\\
+\hline
+{\em tabname} & Name of the definition the changed edge is in\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_ae55705c9c541f326757e2a4ba0310af0}\label{class_model_controller_ae55705c9c541f326757e2a4ba0310af0}} 
+\index{Model\+Controller@{Model\+Controller}!Update\+Edge\+Name@{Update\+Edge\+Name}}
+\index{Update\+Edge\+Name@{Update\+Edge\+Name}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Edge\+Name()}{UpdateEdgeName()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Update\+Edge\+Name (\begin{DoxyParamCaption}\item[{string}]{newname,  }\item[{M\+M.\+Model.\+Edge}]{newedgeobj,  }\item[{string}]{tabname }\end{DoxyParamCaption})}
+
+
+
+Updates the name of a specific edge 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newname} & New name\\
+\hline
+{\em newedgeobj} & The edge model object that needs to be changed\\
+\hline
+{\em tabname} & Name of the definition the changed edge is in\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_aaa7910a28a9feb7e6086cec6aba33613}\label{class_model_controller_aaa7910a28a9feb7e6086cec6aba33613}} 
+\index{Model\+Controller@{Model\+Controller}!Update\+Edge\+Source@{Update\+Edge\+Source}}
+\index{Update\+Edge\+Source@{Update\+Edge\+Source}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Edge\+Source()}{UpdateEdgeSource()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Update\+Edge\+Source (\begin{DoxyParamCaption}\item[{string}]{newsourcename,  }\item[{M\+M.\+Model.\+Edge}]{newedgeobj,  }\item[{string}]{tabname }\end{DoxyParamCaption})}
+
+
+
+Updates the source of a specific edge 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newsourcename} & Name of the new source\\
+\hline
+{\em newedgeobj} & The edge model object that needs to be changed\\
+\hline
+{\em tabname} & Name of the definition the changed edge is in\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_afc082aa500c60243108b67e509d62ef2}\label{class_model_controller_afc082aa500c60243108b67e509d62ef2}} 
+\index{Model\+Controller@{Model\+Controller}!Update\+Edge\+Target@{Update\+Edge\+Target}}
+\index{Update\+Edge\+Target@{Update\+Edge\+Target}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Edge\+Target()}{UpdateEdgeTarget()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Update\+Edge\+Target (\begin{DoxyParamCaption}\item[{string}]{newtargetname,  }\item[{M\+M.\+Model.\+Edge}]{newedgeobj,  }\item[{string}]{tabname }\end{DoxyParamCaption})}
+
+
+
+Updates the target of a specific edge 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newtargetname} & Name of the new target\\
+\hline
+{\em newedgeobj} & The edge model object that needs to be changed\\
+\hline
+{\em tabname} & Name of the definition the changed edge is in\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_add94ec175f5f81a3acb57a33f958c3a5}\label{class_model_controller_add94ec175f5f81a3acb57a33f958c3a5}} 
+\index{Model\+Controller@{Model\+Controller}!Update\+Node\+Act@{Update\+Node\+Act}}
+\index{Update\+Node\+Act@{Update\+Node\+Act}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Node\+Act()}{UpdateNodeAct()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Update\+Node\+Act (\begin{DoxyParamCaption}\item[{Act}]{newact,  }\item[{M\+M.\+Model.\+Node}]{newnodeobj,  }\item[{string}]{tabname }\end{DoxyParamCaption})}
+
+
+
+Updates the act variable of a specific node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newact} & New value for act\\
+\hline
+{\em newnodeobj} & The node model object that needs to be changed\\
+\hline
+{\em tabname} & Name of the definition the changed node is in\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_a0e667937f2c81e87b6fa8a501aea09b9}\label{class_model_controller_a0e667937f2c81e87b6fa8a501aea09b9}} 
+\index{Model\+Controller@{Model\+Controller}!Update\+Node\+Add@{Update\+Node\+Add}}
+\index{Update\+Node\+Add@{Update\+Node\+Add}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Node\+Add()}{UpdateNodeAdd()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Update\+Node\+Add (\begin{DoxyParamCaption}\item[{string}]{newadd,  }\item[{M\+M.\+Model.\+Node}]{updated\+Node,  }\item[{string}]{tabname }\end{DoxyParamCaption})}
+
+
+
+Updates the add variable of a specific node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newadd} & New value for add\\
+\hline
+{\em updated\+Node} & The node model object that needs to be changed\\
+\hline
+{\em tabname} & Name of the definition the changed node is in\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_acd6773a9b3bd6bacec227104838d5403}\label{class_model_controller_acd6773a9b3bd6bacec227104838d5403}} 
+\index{Model\+Controller@{Model\+Controller}!Update\+Node\+At@{Update\+Node\+At}}
+\index{Update\+Node\+At@{Update\+Node\+At}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Node\+At()}{UpdateNodeAt()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Update\+Node\+At (\begin{DoxyParamCaption}\item[{int}]{newat,  }\item[{M\+M.\+Model.\+Node}]{newnodeobj,  }\item[{string}]{tabname }\end{DoxyParamCaption})}
+
+
+
+Updates the at variable of a specific node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newat} & New value for at\\
+\hline
+{\em newnodeobj} & The node model object that needs to be changed\\
+\hline
+{\em tabname} & Name of the definition the changed node is in\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_a5b2ce36e6894c3e41f42b4f9dc0d9b06}\label{class_model_controller_a5b2ce36e6894c3e41f42b4f9dc0d9b06}} 
+\index{Model\+Controller@{Model\+Controller}!Update\+Node\+Behavior@{Update\+Node\+Behavior}}
+\index{Update\+Node\+Behavior@{Update\+Node\+Behavior}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Node\+Behavior()}{UpdateNodeBehavior()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Update\+Node\+Behavior (\begin{DoxyParamCaption}\item[{Behavior}]{newtype,  }\item[{M\+M.\+Model.\+Node}]{newnodeobj,  }\item[{string}]{tabname }\end{DoxyParamCaption})}
+
+
+
+Updates the behavior of a specific node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newtype} & New behavior\\
+\hline
+{\em newnodeobj} & The node model object that needs to be changed\\
+\hline
+{\em tabname} & Name of the definition the changed node is in\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_a98a3ea019f3d366a0f91d3536f96a1c3}\label{class_model_controller_a98a3ea019f3d366a0f91d3536f96a1c3}} 
+\index{Model\+Controller@{Model\+Controller}!Update\+Node\+Definition@{Update\+Node\+Definition}}
+\index{Update\+Node\+Definition@{Update\+Node\+Definition}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Node\+Definition()}{UpdateNodeDefinition()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Update\+Node\+Definition (\begin{DoxyParamCaption}\item[{string}]{newdefname,  }\item[{M\+M.\+Model.\+Node}]{newnodeobj,  }\item[{string}]{tabname }\end{DoxyParamCaption})}
+
+
+
+Updates the typeof variable of a specific node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newdefname} & The name of the definition typeof needs to be\\
+\hline
+{\em newnodeobj} & The node model object that needs to be changed\\
+\hline
+{\em tabname} & Name of the definition the changed node is in\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_ae9cfb758e08532565a361a02cdad420f}\label{class_model_controller_ae9cfb758e08532565a361a02cdad420f}} 
+\index{Model\+Controller@{Model\+Controller}!Update\+Node\+How@{Update\+Node\+How}}
+\index{Update\+Node\+How@{Update\+Node\+How}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Node\+How()}{UpdateNodeHow()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Update\+Node\+How (\begin{DoxyParamCaption}\item[{How}]{newhow,  }\item[{M\+M.\+Model.\+Node}]{newnodeobj,  }\item[{string}]{tabname }\end{DoxyParamCaption})}
+
+
+
+Updates the how variable of a specific node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newhow} & New value for how\\
+\hline
+{\em newnodeobj} & The node model object that needs to be changed\\
+\hline
+{\em tabname} & Name of the definition the changed node is in\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_aefda67a5dfdc0b8dd5dfc8811d42a52a}\label{class_model_controller_aefda67a5dfdc0b8dd5dfc8811d42a52a}} 
+\index{Model\+Controller@{Model\+Controller}!Update\+Node\+IO@{Update\+Node\+IO}}
+\index{Update\+Node\+IO@{Update\+Node\+IO}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Node\+I\+O()}{UpdateNodeIO()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Update\+Node\+IO (\begin{DoxyParamCaption}\item[{IO}]{newio,  }\item[{M\+M.\+Model.\+Node}]{newnodeobj,  }\item[{string}]{tabname }\end{DoxyParamCaption})}
+
+
+
+Updates the io variable of a specific node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newio} & New value for io\\
+\hline
+{\em newnodeobj} & The node model object that needs to be changed\\
+\hline
+{\em tabname} & Name of the definition the changed node is in\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_a7bdefba3d9a2445710046462819bb5dd}\label{class_model_controller_a7bdefba3d9a2445710046462819bb5dd}} 
+\index{Model\+Controller@{Model\+Controller}!Update\+Node\+Max@{Update\+Node\+Max}}
+\index{Update\+Node\+Max@{Update\+Node\+Max}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Node\+Max()}{UpdateNodeMax()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Update\+Node\+Max (\begin{DoxyParamCaption}\item[{int}]{newmax,  }\item[{string}]{tabname,  }\item[{M\+M.\+Model.\+Node}]{updated\+Node }\end{DoxyParamCaption})}
+
+
+
+Updates the max variable of a specific node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newmax} & New value for max\\
+\hline
+{\em tabname} & Name of the definition the changed node is in\\
+\hline
+{\em updated\+Node} & The node model object that needs to be changed\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_a2bc7d852f482d7190094602734029097}\label{class_model_controller_a2bc7d852f482d7190094602734029097}} 
+\index{Model\+Controller@{Model\+Controller}!Update\+Node\+Name@{Update\+Node\+Name}}
+\index{Update\+Node\+Name@{Update\+Node\+Name}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Node\+Name()}{UpdateNodeName()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Update\+Node\+Name (\begin{DoxyParamCaption}\item[{string}]{newname,  }\item[{M\+M.\+Model.\+Node}]{newnodeobj,  }\item[{string}]{tabname }\end{DoxyParamCaption})}
+
+
+
+Updates the name of a specific node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newname} & New name\\
+\hline
+{\em newnodeobj} & The node model object that needs to be changed\\
+\hline
+{\em tabname} & Name of the definition the changed node is in\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_a184dc2424e87afbec8dc12e99f2f2451}\label{class_model_controller_a184dc2424e87afbec8dc12e99f2f2451}} 
+\index{Model\+Controller@{Model\+Controller}!Update\+Node\+Position@{Update\+Node\+Position}}
+\index{Update\+Node\+Position@{Update\+Node\+Position}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Node\+Position()}{UpdateNodePosition()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Update\+Node\+Position (\begin{DoxyParamCaption}\item[{Vector2}]{new\+Pos,  }\item[{string}]{tabname,  }\item[{M\+M.\+Model.\+Node}]{newnodeobj }\end{DoxyParamCaption})}
+
+
+
+Updates the position of a specific node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Pos} & New position\\
+\hline
+{\em newnodeobj} & The node model object that needs to be changed\\
+\hline
+{\em tabname} & Name of the definition the changed node is in\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_controller_a008c60f8bb31f6525f116b7b9cd7107b}\label{class_model_controller_a008c60f8bb31f6525f116b7b9cd7107b}} 
+\index{Model\+Controller@{Model\+Controller}!Update\+Node\+When@{Update\+Node\+When}}
+\index{Update\+Node\+When@{Update\+Node\+When}!Model\+Controller@{Model\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Node\+When()}{UpdateNodeWhen()}}
+{\footnotesize\ttfamily void Model\+Controller.\+Update\+Node\+When (\begin{DoxyParamCaption}\item[{When}]{newwhen,  }\item[{M\+M.\+Model.\+Node}]{newnodeobj,  }\item[{string}]{tabname }\end{DoxyParamCaption})}
+
+
+
+Updates the when variable of a specific node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newwhen} & New value for when\\
+\hline
+{\em newnodeobj} & The node model object that needs to be changed\\
+\hline
+{\em tabname} & Name of the definition the changed node is in\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Model\+Controller.\+cs\end{DoxyCompactItemize}

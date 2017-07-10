@@ -1,0 +1,193 @@
+\hypertarget{class_select_edge_button}{}\section{Select\+Edge\+Button Class Reference}
+\label{class_select_edge_button}\index{Select\+Edge\+Button@{Select\+Edge\+Button}}
+
+
+Visual Edge Object logic  
+
+
+Inheritance diagram for Select\+Edge\+Button\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_select_edge_button}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_select_edge_button_a1feacae4681c9223e93212b399a45804}{Add\+Edge\+Point} (Vector2 new\+Point, Game\+Object parent)
+\begin{DoxyCompactList}\small\item\em Adds a new corner point to the edge T\+O\+DO\+: Corner points should be moveable \end{DoxyCompactList}\item 
+void \hyperlink{class_select_edge_button_adba216e2255a885ba68f71ab755050e6}{Stretch} (Rect\+Transform \+\_\+sprite, Vector2 \+\_\+initial\+Position, Vector2 \+\_\+final\+Position)
+\begin{DoxyCompactList}\small\item\em Stretches the edge image between two points (Important\+: Edges use Raw\+Images for UV management!) \end{DoxyCompactList}\item 
+void \hyperlink{class_select_edge_button_a95682addf9c0dc548bdbec0677295275}{Stop\+Current\+Edge} ()
+\begin{DoxyCompactList}\small\item\em Completes the edge (stops stretching to mouse) \end{DoxyCompactList}\item 
+void \hyperlink{class_select_edge_button_a2955591ac3928b72e096de918c98f9e4}{Deselect} ()
+\begin{DoxyCompactList}\small\item\em deselects \end{DoxyCompactList}\item 
+bool \hyperlink{class_select_edge_button_a2931dd33f05961306aba6cdf535a597a}{Update\+Source} (string new\+Source\+Name)
+\begin{DoxyCompactList}\small\item\em Updates the source of this edge \end{DoxyCompactList}\item 
+bool \hyperlink{class_select_edge_button_a3a394258288e816eb5c06e6608edad4a}{Update\+Target} (string new\+Target\+Name)
+\begin{DoxyCompactList}\small\item\em Updates the target node of this edge \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_select_edge_button_ad8091eded4e5867a05a3d8ca5661986c}\label{class_select_edge_button_ad8091eded4e5867a05a3d8ca5661986c}} 
+List$<$ Rect\+Transform $>$ {\bfseries edge\+Corners}
+\item 
+\mbox{\Hypertarget{class_select_edge_button_aa266ecdd7eaa7905573c9ea51672c346}\label{class_select_edge_button_aa266ecdd7eaa7905573c9ea51672c346}} 
+Button {\bfseries your\+Button}
+\item 
+\mbox{\Hypertarget{class_select_edge_button_a61a55560653b35c10c98a23d76752218}\label{class_select_edge_button_a61a55560653b35c10c98a23d76752218}} 
+Behavior {\bfseries type}
+\item 
+\mbox{\Hypertarget{class_select_edge_button_a7e39634ae2b028aec4dedcf870423a7d}\label{class_select_edge_button_a7e39634ae2b028aec4dedcf870423a7d}} 
+Rect\+Transform {\bfseries line\+Image}
+\item 
+\mbox{\Hypertarget{class_select_edge_button_adb4a2fb2758a17b836baf88968e30ba5}\label{class_select_edge_button_adb4a2fb2758a17b836baf88968e30ba5}} 
+Rect\+Transform {\bfseries corner\+Image}
+\item 
+\mbox{\Hypertarget{class_select_edge_button_afe01a333d58c771cd8d5b04b6c68c24d}\label{class_select_edge_button_afe01a333d58c771cd8d5b04b6c68c24d}} 
+Rect\+Transform {\bfseries temp\+Edge}
+\item 
+\mbox{\Hypertarget{class_select_edge_button_add0fdd522d721462d82dc29803b00c51}\label{class_select_edge_button_add0fdd522d721462d82dc29803b00c51}} 
+Sprite {\bfseries corner\+Sprite}
+\item 
+\mbox{\Hypertarget{class_select_edge_button_a52992d67a442bc9b14b6628fbfa6fd16}\label{class_select_edge_button_a52992d67a442bc9b14b6628fbfa6fd16}} 
+Transform {\bfseries content}
+\item 
+\mbox{\Hypertarget{class_select_edge_button_a5bad131a282de8f14427fa3a3e93e588}\label{class_select_edge_button_a5bad131a282de8f14427fa3a3e93e588}} 
+bool {\bfseries is\+Selected} = false
+\item 
+\mbox{\Hypertarget{class_select_edge_button_a068915d3ba018eb2c831bd727be5b2ea}\label{class_select_edge_button_a068915d3ba018eb2c831bd727be5b2ea}} 
+M\+M.\+Model.\+Edge {\bfseries idedge}
+\item 
+\mbox{\Hypertarget{class_select_edge_button_ae2195894dd4f4fe1511405f1966eaa19}\label{class_select_edge_button_ae2195894dd4f4fe1511405f1966eaa19}} 
+Text {\bfseries label}
+\item 
+\mbox{\Hypertarget{class_select_edge_button_a8116f80bd330d6d7c8c8481155fe0e42}\label{class_select_edge_button_a8116f80bd330d6d7c8c8481155fe0e42}} 
+Text {\bfseries exp}
+\item 
+\mbox{\Hypertarget{class_select_edge_button_a61e8292864e91cc8418ba59719eae4a4}\label{class_select_edge_button_a61e8292864e91cc8418ba59719eae4a4}} 
+string {\bfseries source}
+\item 
+\mbox{\Hypertarget{class_select_edge_button_a7e3535b7b32c7201fdf00f4befd514cd}\label{class_select_edge_button_a7e3535b7b32c7201fdf00f4befd514cd}} 
+string {\bfseries target}
+\item 
+\mbox{\Hypertarget{class_select_edge_button_a1e1610e8f5ef52f41346973f160c0e7b}\label{class_select_edge_button_a1e1610e8f5ef52f41346973f160c0e7b}} 
+Game\+Object {\bfseries source\+Obj} = null
+\item 
+\mbox{\Hypertarget{class_select_edge_button_ab0f5e1f7057fe3fa68c424174c2fe7b3}\label{class_select_edge_button_ab0f5e1f7057fe3fa68c424174c2fe7b3}} 
+Game\+Object {\bfseries target\+Obj} = null
+\item 
+\mbox{\Hypertarget{class_select_edge_button_ae5b245dd838ecae0377648102ba4763a}\label{class_select_edge_button_ae5b245dd838ecae0377648102ba4763a}} 
+Rect\+Transform {\bfseries source\+Corner} = null
+\item 
+\mbox{\Hypertarget{class_select_edge_button_adf0325406dd21f8b89a6b57892ef56ee}\label{class_select_edge_button_adf0325406dd21f8b89a6b57892ef56ee}} 
+Rect\+Transform {\bfseries target\+Corner} = null
+\item 
+\mbox{\Hypertarget{class_select_edge_button_a56a6d857fbec1524dbc4067a7843152f}\label{class_select_edge_button_a56a6d857fbec1524dbc4067a7843152f}} 
+Rect\+Transform {\bfseries edge\+Arrow}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Visual Edge Object logic 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_select_edge_button_a1feacae4681c9223e93212b399a45804}\label{class_select_edge_button_a1feacae4681c9223e93212b399a45804}} 
+\index{Select\+Edge\+Button@{Select\+Edge\+Button}!Add\+Edge\+Point@{Add\+Edge\+Point}}
+\index{Add\+Edge\+Point@{Add\+Edge\+Point}!Select\+Edge\+Button@{Select\+Edge\+Button}}
+\subsubsection{\texorpdfstring{Add\+Edge\+Point()}{AddEdgePoint()}}
+{\footnotesize\ttfamily void Select\+Edge\+Button.\+Add\+Edge\+Point (\begin{DoxyParamCaption}\item[{Vector2}]{new\+Point,  }\item[{Game\+Object}]{parent }\end{DoxyParamCaption})}
+
+
+
+Adds a new corner point to the edge T\+O\+DO\+: Corner points should be moveable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Point} & Position of the new point\\
+\hline
+{\em parent} & Parent of the new point (important for target/source)\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_select_edge_button_a2955591ac3928b72e096de918c98f9e4}\label{class_select_edge_button_a2955591ac3928b72e096de918c98f9e4}} 
+\index{Select\+Edge\+Button@{Select\+Edge\+Button}!Deselect@{Deselect}}
+\index{Deselect@{Deselect}!Select\+Edge\+Button@{Select\+Edge\+Button}}
+\subsubsection{\texorpdfstring{Deselect()}{Deselect()}}
+{\footnotesize\ttfamily void Select\+Edge\+Button.\+Deselect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+deselects 
+
+\mbox{\Hypertarget{class_select_edge_button_a95682addf9c0dc548bdbec0677295275}\label{class_select_edge_button_a95682addf9c0dc548bdbec0677295275}} 
+\index{Select\+Edge\+Button@{Select\+Edge\+Button}!Stop\+Current\+Edge@{Stop\+Current\+Edge}}
+\index{Stop\+Current\+Edge@{Stop\+Current\+Edge}!Select\+Edge\+Button@{Select\+Edge\+Button}}
+\subsubsection{\texorpdfstring{Stop\+Current\+Edge()}{StopCurrentEdge()}}
+{\footnotesize\ttfamily void Select\+Edge\+Button.\+Stop\+Current\+Edge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Completes the edge (stops stretching to mouse) 
+
+\mbox{\Hypertarget{class_select_edge_button_adba216e2255a885ba68f71ab755050e6}\label{class_select_edge_button_adba216e2255a885ba68f71ab755050e6}} 
+\index{Select\+Edge\+Button@{Select\+Edge\+Button}!Stretch@{Stretch}}
+\index{Stretch@{Stretch}!Select\+Edge\+Button@{Select\+Edge\+Button}}
+\subsubsection{\texorpdfstring{Stretch()}{Stretch()}}
+{\footnotesize\ttfamily void Select\+Edge\+Button.\+Stretch (\begin{DoxyParamCaption}\item[{Rect\+Transform}]{\+\_\+sprite,  }\item[{Vector2}]{\+\_\+initial\+Position,  }\item[{Vector2}]{\+\_\+final\+Position }\end{DoxyParamCaption})}
+
+
+
+Stretches the edge image between two points (Important\+: Edges use Raw\+Images for UV management!) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+sprite} & The recttransform that needs to be stretched\\
+\hline
+{\em \+\_\+initial\+Position} & first point\\
+\hline
+{\em \+\_\+final\+Position} & second point\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_select_edge_button_a2931dd33f05961306aba6cdf535a597a}\label{class_select_edge_button_a2931dd33f05961306aba6cdf535a597a}} 
+\index{Select\+Edge\+Button@{Select\+Edge\+Button}!Update\+Source@{Update\+Source}}
+\index{Update\+Source@{Update\+Source}!Select\+Edge\+Button@{Select\+Edge\+Button}}
+\subsubsection{\texorpdfstring{Update\+Source()}{UpdateSource()}}
+{\footnotesize\ttfamily bool Select\+Edge\+Button.\+Update\+Source (\begin{DoxyParamCaption}\item[{string}]{new\+Source\+Name }\end{DoxyParamCaption})}
+
+
+
+Updates the source of this edge 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Source\+Name} & Name of the new source\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if a node with the given name was found and the source is updated
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_select_edge_button_a3a394258288e816eb5c06e6608edad4a}\label{class_select_edge_button_a3a394258288e816eb5c06e6608edad4a}} 
+\index{Select\+Edge\+Button@{Select\+Edge\+Button}!Update\+Target@{Update\+Target}}
+\index{Update\+Target@{Update\+Target}!Select\+Edge\+Button@{Select\+Edge\+Button}}
+\subsubsection{\texorpdfstring{Update\+Target()}{UpdateTarget()}}
+{\footnotesize\ttfamily bool Select\+Edge\+Button.\+Update\+Target (\begin{DoxyParamCaption}\item[{string}]{new\+Target\+Name }\end{DoxyParamCaption})}
+
+
+
+Updates the target node of this edge 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Target\+Name} & Name of the new target\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if a node with the given name was found and the target is updated
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Select\+Edge\+Button.\+cs\end{DoxyCompactItemize}

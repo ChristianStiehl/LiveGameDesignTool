@@ -1,0 +1,100 @@
+\hypertarget{class_tab_manager}{}\section{Tab\+Manager Class Reference}
+\label{class_tab_manager}\index{Tab\+Manager@{Tab\+Manager}}
+
+
+Script that manages the tabs and adds new tabs  
+
+
+Inheritance diagram for Tab\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_tab_manager}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_tab_manager_addabe80f37af16c101517e0a4c63fdef}{Add\+Tab} (string name)
+\begin{DoxyCompactList}\small\item\em Adds a tab to the diagram \end{DoxyCompactList}\item 
+void \hyperlink{class_tab_manager_a060b949fab08f226d44b0daa86e5c424}{Tab\+Removed} ()
+\begin{DoxyCompactList}\small\item\em When this script receives a \char`\"{}tab\+Removed\char`\"{} event this function scales the remaining tabs up \end{DoxyCompactList}\item 
+Game\+Object \hyperlink{class_tab_manager_a98d132c5a132278fad057a17463f0000}{Get\+Last\+Tab} ()
+\begin{DoxyCompactList}\small\item\em returns the active tab \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_tab_manager_a4da840c069f5dbdff9e99072b892853a}\label{class_tab_manager_a4da840c069f5dbdff9e99072b892853a}} 
+Button {\bfseries your\+Button}
+\item 
+\mbox{\Hypertarget{class_tab_manager_ac948c833bf1af52a2b6fe0329633b5de}\label{class_tab_manager_ac948c833bf1af52a2b6fe0329633b5de}} 
+Game\+Object {\bfseries graph\+Tab}
+\item 
+\mbox{\Hypertarget{class_tab_manager_ac5766310834b7c9266c4f8ebdd3e094e}\label{class_tab_manager_ac5766310834b7c9266c4f8ebdd3e094e}} 
+Transform {\bfseries canvas}
+\item 
+\mbox{\Hypertarget{class_tab_manager_a4e2bfa11e6d027771976694f5d7031a7}\label{class_tab_manager_a4e2bfa11e6d027771976694f5d7031a7}} 
+int {\bfseries tab\+Count} = 0
+\item 
+\mbox{\Hypertarget{class_tab_manager_a5ef5fb0116c9331f3df7e4e2b7dc4099}\label{class_tab_manager_a5ef5fb0116c9331f3df7e4e2b7dc4099}} 
+Game\+Object {\bfseries temp\+Obj}
+\item 
+\mbox{\Hypertarget{class_tab_manager_a9b81c8d17fb6fba80bbbbc9fe7d66efc}\label{class_tab_manager_a9b81c8d17fb6fba80bbbbc9fe7d66efc}} 
+float {\bfseries scale} = 1.\+0f
+\item 
+\mbox{\Hypertarget{class_tab_manager_aa946d34ac37a73032a4f8b9eb7d5eddb}\label{class_tab_manager_aa946d34ac37a73032a4f8b9eb7d5eddb}} 
+int {\bfseries name\+Counter} = 1
+\item 
+\mbox{\Hypertarget{class_tab_manager_a856215722f62956293ae49169e8511e2}\label{class_tab_manager_a856215722f62956293ae49169e8511e2}} 
+\hyperlink{class_model_controller}{Model\+Controller} {\bfseries model}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Script that manages the tabs and adds new tabs 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_tab_manager_addabe80f37af16c101517e0a4c63fdef}\label{class_tab_manager_addabe80f37af16c101517e0a4c63fdef}} 
+\index{Tab\+Manager@{Tab\+Manager}!Add\+Tab@{Add\+Tab}}
+\index{Add\+Tab@{Add\+Tab}!Tab\+Manager@{Tab\+Manager}}
+\subsubsection{\texorpdfstring{Add\+Tab()}{AddTab()}}
+{\footnotesize\ttfamily void Tab\+Manager.\+Add\+Tab (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Adds a tab to the diagram 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the new tab\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_tab_manager_a98d132c5a132278fad057a17463f0000}\label{class_tab_manager_a98d132c5a132278fad057a17463f0000}} 
+\index{Tab\+Manager@{Tab\+Manager}!Get\+Last\+Tab@{Get\+Last\+Tab}}
+\index{Get\+Last\+Tab@{Get\+Last\+Tab}!Tab\+Manager@{Tab\+Manager}}
+\subsubsection{\texorpdfstring{Get\+Last\+Tab()}{GetLastTab()}}
+{\footnotesize\ttfamily Game\+Object Tab\+Manager.\+Get\+Last\+Tab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns the active tab 
+
+\begin{DoxyReturn}{Returns}
+Returns the active tab
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tab_manager_a060b949fab08f226d44b0daa86e5c424}\label{class_tab_manager_a060b949fab08f226d44b0daa86e5c424}} 
+\index{Tab\+Manager@{Tab\+Manager}!Tab\+Removed@{Tab\+Removed}}
+\index{Tab\+Removed@{Tab\+Removed}!Tab\+Manager@{Tab\+Manager}}
+\subsubsection{\texorpdfstring{Tab\+Removed()}{TabRemoved()}}
+{\footnotesize\ttfamily void Tab\+Manager.\+Tab\+Removed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+When this script receives a \char`\"{}tab\+Removed\char`\"{} event this function scales the remaining tabs up 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Tab\+Manager.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,223 @@
+\hypertarget{class_model_view_controller}{}\section{Model\+View\+Controller Class Reference}
+\label{class_model_view_controller}\index{Model\+View\+Controller@{Model\+View\+Controller}}
+
+
+Model View Controller for the tool, links the visual (view) with the functional (model) elements of the diagrams  
+
+
+Inheritance diagram for Model\+View\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_model_view_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_model_view_controller_a733e3f93205ae7dea9e3c643a04174ea}{Change\+Type} (Behavior type)
+\begin{DoxyCompactList}\small\item\em Changes the selected type of the M\+VC \end{DoxyCompactList}\item 
+bool \hyperlink{class_model_view_controller_a9eba81ca552ecca21b7d58e66b12b952}{is\+Mouse\+Over\+Grid} ()
+\begin{DoxyCompactList}\small\item\em Checks if the mouse is over the transform of the grid \end{DoxyCompactList}\item 
+bool \hyperlink{class_model_view_controller_a2427ee5d98caea91251c69be3a29934a}{is\+Mouse\+Not\+Over\+Children} (bool select)
+\begin{DoxyCompactList}\small\item\em Checks if the mouse is not over one of the Nodes \end{DoxyCompactList}\item 
+void \hyperlink{class_model_view_controller_a598a752c88bbaf0f08f18e3a26a10671}{Hide\+Inspector} ()
+\begin{DoxyCompactList}\small\item\em Function to hide the node and endge inspectors \end{DoxyCompactList}\item 
+void \hyperlink{class_model_view_controller_a0131bdf2b008298e97229e2c729015d4}{Select\+Edge} (Game\+Object selected\+Edge)
+\begin{DoxyCompactList}\small\item\em Tells the edge inspector to select the given object and tells the node inspector to deselect. \end{DoxyCompactList}\item 
+void \hyperlink{class_model_view_controller_a08958c4f615ea68ec493fbb52139646c}{Add\+Node} (Behavior newbehavior, Vector2 pos)
+\begin{DoxyCompactList}\small\item\em Adds a visual node to the diagram \end{DoxyCompactList}\item 
+void \hyperlink{class_model_view_controller_a1a31ef775ee8e6090e99e0e09dff4eab}{Add\+Edge} (Vector2 pos)
+\begin{DoxyCompactList}\small\item\em Adds a visual flow edge to the diagram \end{DoxyCompactList}\item 
+void \hyperlink{class_model_view_controller_a1a64c20a275603c8c8352e82cc4c87ec}{Add\+State} (Vector2 pos)
+\begin{DoxyCompactList}\small\item\em Adds a visual state edge to the diagram \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_model_view_controller_abdf9d85627b8e6c2be4df28352354021}\label{class_model_view_controller_abdf9d85627b8e6c2be4df28352354021}} 
+Game\+Object {\bfseries node\+Prefab}
+\item 
+\mbox{\Hypertarget{class_model_view_controller_a4e20a746b2c6d7b3081dc1ebf60d375b}\label{class_model_view_controller_a4e20a746b2c6d7b3081dc1ebf60d375b}} 
+Game\+Object {\bfseries edge\+Prefab}
+\item 
+\mbox{\Hypertarget{class_model_view_controller_a3dac4afeed4f9f812ae6bccbe2b2af8d}\label{class_model_view_controller_a3dac4afeed4f9f812ae6bccbe2b2af8d}} 
+Game\+Object {\bfseries state\+Prefab}
+\item 
+\mbox{\Hypertarget{class_model_view_controller_a3f01456e8d43bf45abdd67b9d2f2eca9}\label{class_model_view_controller_a3f01456e8d43bf45abdd67b9d2f2eca9}} 
+Transform {\bfseries canvas}
+\item 
+\mbox{\Hypertarget{class_model_view_controller_a1855edfc4ec8960c03b4854c69c3b9fb}\label{class_model_view_controller_a1855edfc4ec8960c03b4854c69c3b9fb}} 
+Transform {\bfseries view}
+\item 
+\mbox{\Hypertarget{class_model_view_controller_a8b41aa45d5ebf2fc8968d69f5213de72}\label{class_model_view_controller_a8b41aa45d5ebf2fc8968d69f5213de72}} 
+Transform {\bfseries grid}
+\item 
+\mbox{\Hypertarget{class_model_view_controller_a7292985cf38fd72751d0dcdb91cc41b0}\label{class_model_view_controller_a7292985cf38fd72751d0dcdb91cc41b0}} 
+Rect\+Transform {\bfseries grid\+Transform}
+\item 
+\mbox{\Hypertarget{class_model_view_controller_a1e4b34f4f1253772eb5d8cbca94c35bd}\label{class_model_view_controller_a1e4b34f4f1253772eb5d8cbca94c35bd}} 
+Behavior {\bfseries selected\+Type} = Behavior.\+Mouse
+\item 
+\mbox{\Hypertarget{class_model_view_controller_ae03c4da99e654518796aad15c337aeed}\label{class_model_view_controller_ae03c4da99e654518796aad15c337aeed}} 
+Scroll\+Rect {\bfseries scroll\+Rect}
+\item 
+\mbox{\Hypertarget{class_model_view_controller_ab2159253c4a9fa05433319858e20bfe4}\label{class_model_view_controller_ab2159253c4a9fa05433319858e20bfe4}} 
+\hyperlink{class_model_controller}{Model\+Controller} {\bfseries model}
+\item 
+\mbox{\Hypertarget{class_model_view_controller_a39d8b10ab5d8b0acc9f3dc1997b50bf2}\label{class_model_view_controller_a39d8b10ab5d8b0acc9f3dc1997b50bf2}} 
+Game\+Object {\bfseries temp\+Edge}
+\item 
+\mbox{\Hypertarget{class_model_view_controller_a1286a134fbcb061f3f6c0cacef0d932b}\label{class_model_view_controller_a1286a134fbcb061f3f6c0cacef0d932b}} 
+Game\+Object {\bfseries temp\+State}
+\item 
+\mbox{\Hypertarget{class_model_view_controller_adc66a5588a24798d9f841b692ea9535a}\label{class_model_view_controller_adc66a5588a24798d9f841b692ea9535a}} 
+bool {\bfseries something\+Selected} = false
+\item 
+\mbox{\Hypertarget{class_model_view_controller_a69ab61b3629af37235c4176dc4983259}\label{class_model_view_controller_a69ab61b3629af37235c4176dc4983259}} 
+Game\+Object {\bfseries selected\+Object}
+\item 
+\mbox{\Hypertarget{class_model_view_controller_a01ebde35333857fff2556d966be1e71a}\label{class_model_view_controller_a01ebde35333857fff2556d966be1e71a}} 
+\hyperlink{class_node_inspector}{Node\+Inspector} {\bfseries node\+Inspector}
+\item 
+\mbox{\Hypertarget{class_model_view_controller_a4f1f19194987a457784f16c46f5ca554}\label{class_model_view_controller_a4f1f19194987a457784f16c46f5ca554}} 
+\hyperlink{class_edge_inspector}{Edge\+Inspector} {\bfseries edge\+Inspector}
+\item 
+\mbox{\Hypertarget{class_model_view_controller_a2570ca12086280f2e0880fe9ecfdf69d}\label{class_model_view_controller_a2570ca12086280f2e0880fe9ecfdf69d}} 
+Game\+Object {\bfseries copied\+Node}
+\item 
+\mbox{\Hypertarget{class_model_view_controller_ac854a59175e809681769268b0efc9832}\label{class_model_view_controller_ac854a59175e809681769268b0efc9832}} 
+Game\+Object {\bfseries temp\+Node}
+\item 
+\mbox{\Hypertarget{class_model_view_controller_adebc28b6cf6acb553f09d9c8238a6520}\label{class_model_view_controller_adebc28b6cf6acb553f09d9c8238a6520}} 
+Rect\+Transform {\bfseries tab}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Model View Controller for the tool, links the visual (view) with the functional (model) elements of the diagrams 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model_view_controller_a1a31ef775ee8e6090e99e0e09dff4eab}\label{class_model_view_controller_a1a31ef775ee8e6090e99e0e09dff4eab}} 
+\index{Model\+View\+Controller@{Model\+View\+Controller}!Add\+Edge@{Add\+Edge}}
+\index{Add\+Edge@{Add\+Edge}!Model\+View\+Controller@{Model\+View\+Controller}}
+\subsubsection{\texorpdfstring{Add\+Edge()}{AddEdge()}}
+{\footnotesize\ttfamily void Model\+View\+Controller.\+Add\+Edge (\begin{DoxyParamCaption}\item[{Vector2}]{pos }\end{DoxyParamCaption})}
+
+
+
+Adds a visual flow edge to the diagram 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Starting position of the new flow edge\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_view_controller_a08958c4f615ea68ec493fbb52139646c}\label{class_model_view_controller_a08958c4f615ea68ec493fbb52139646c}} 
+\index{Model\+View\+Controller@{Model\+View\+Controller}!Add\+Node@{Add\+Node}}
+\index{Add\+Node@{Add\+Node}!Model\+View\+Controller@{Model\+View\+Controller}}
+\subsubsection{\texorpdfstring{Add\+Node()}{AddNode()}}
+{\footnotesize\ttfamily void Model\+View\+Controller.\+Add\+Node (\begin{DoxyParamCaption}\item[{Behavior}]{newbehavior,  }\item[{Vector2}]{pos }\end{DoxyParamCaption})}
+
+
+
+Adds a visual node to the diagram 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newbehavior} & The behavior of the new node\\
+\hline
+{\em pos} & The position of the new node\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_view_controller_a1a64c20a275603c8c8352e82cc4c87ec}\label{class_model_view_controller_a1a64c20a275603c8c8352e82cc4c87ec}} 
+\index{Model\+View\+Controller@{Model\+View\+Controller}!Add\+State@{Add\+State}}
+\index{Add\+State@{Add\+State}!Model\+View\+Controller@{Model\+View\+Controller}}
+\subsubsection{\texorpdfstring{Add\+State()}{AddState()}}
+{\footnotesize\ttfamily void Model\+View\+Controller.\+Add\+State (\begin{DoxyParamCaption}\item[{Vector2}]{pos }\end{DoxyParamCaption})}
+
+
+
+Adds a visual state edge to the diagram 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Starting position of the new state edge\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_view_controller_a733e3f93205ae7dea9e3c643a04174ea}\label{class_model_view_controller_a733e3f93205ae7dea9e3c643a04174ea}} 
+\index{Model\+View\+Controller@{Model\+View\+Controller}!Change\+Type@{Change\+Type}}
+\index{Change\+Type@{Change\+Type}!Model\+View\+Controller@{Model\+View\+Controller}}
+\subsubsection{\texorpdfstring{Change\+Type()}{ChangeType()}}
+{\footnotesize\ttfamily void Model\+View\+Controller.\+Change\+Type (\begin{DoxyParamCaption}\item[{Behavior}]{type }\end{DoxyParamCaption})}
+
+
+
+Changes the selected type of the M\+VC 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The new type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_view_controller_a598a752c88bbaf0f08f18e3a26a10671}\label{class_model_view_controller_a598a752c88bbaf0f08f18e3a26a10671}} 
+\index{Model\+View\+Controller@{Model\+View\+Controller}!Hide\+Inspector@{Hide\+Inspector}}
+\index{Hide\+Inspector@{Hide\+Inspector}!Model\+View\+Controller@{Model\+View\+Controller}}
+\subsubsection{\texorpdfstring{Hide\+Inspector()}{HideInspector()}}
+{\footnotesize\ttfamily void Model\+View\+Controller.\+Hide\+Inspector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to hide the node and endge inspectors 
+
+\mbox{\Hypertarget{class_model_view_controller_a2427ee5d98caea91251c69be3a29934a}\label{class_model_view_controller_a2427ee5d98caea91251c69be3a29934a}} 
+\index{Model\+View\+Controller@{Model\+View\+Controller}!is\+Mouse\+Not\+Over\+Children@{is\+Mouse\+Not\+Over\+Children}}
+\index{is\+Mouse\+Not\+Over\+Children@{is\+Mouse\+Not\+Over\+Children}!Model\+View\+Controller@{Model\+View\+Controller}}
+\subsubsection{\texorpdfstring{is\+Mouse\+Not\+Over\+Children()}{isMouseNotOverChildren()}}
+{\footnotesize\ttfamily bool Model\+View\+Controller.\+is\+Mouse\+Not\+Over\+Children (\begin{DoxyParamCaption}\item[{bool}]{select }\end{DoxyParamCaption})}
+
+
+
+Checks if the mouse is not over one of the Nodes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em select} & If the mouse is over a node, should that node be selected? \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if mouse is not over any children, False if the mouse is over a child 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_view_controller_a9eba81ca552ecca21b7d58e66b12b952}\label{class_model_view_controller_a9eba81ca552ecca21b7d58e66b12b952}} 
+\index{Model\+View\+Controller@{Model\+View\+Controller}!is\+Mouse\+Over\+Grid@{is\+Mouse\+Over\+Grid}}
+\index{is\+Mouse\+Over\+Grid@{is\+Mouse\+Over\+Grid}!Model\+View\+Controller@{Model\+View\+Controller}}
+\subsubsection{\texorpdfstring{is\+Mouse\+Over\+Grid()}{isMouseOverGrid()}}
+{\footnotesize\ttfamily bool Model\+View\+Controller.\+is\+Mouse\+Over\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the mouse is over the transform of the grid 
+
+\begin{DoxyReturn}{Returns}
+returns true if the mouse is over the grid and returns false if it is not
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_view_controller_a0131bdf2b008298e97229e2c729015d4}\label{class_model_view_controller_a0131bdf2b008298e97229e2c729015d4}} 
+\index{Model\+View\+Controller@{Model\+View\+Controller}!Select\+Edge@{Select\+Edge}}
+\index{Select\+Edge@{Select\+Edge}!Model\+View\+Controller@{Model\+View\+Controller}}
+\subsubsection{\texorpdfstring{Select\+Edge()}{SelectEdge()}}
+{\footnotesize\ttfamily void Model\+View\+Controller.\+Select\+Edge (\begin{DoxyParamCaption}\item[{Game\+Object}]{selected\+Edge }\end{DoxyParamCaption})}
+
+
+
+Tells the edge inspector to select the given object and tells the node inspector to deselect. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em selected\+Edge} & The selected edge\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Model\+View\+Controller.\+cs\end{DoxyCompactItemize}
