@@ -169,8 +169,10 @@
     <Compile Include="Assets\Scripts\CloseTab.cs" />
     <Compile Include="Assets\Scripts\ConsoleScript.cs" />
     <Compile Include="Assets\Scripts\DefinitionScript.cs" />
+    <Compile Include="Assets\Scripts\DisableEditingScript.cs" />
     <Compile Include="Assets\Scripts\DynamicTab.cs" />
     <Compile Include="Assets\Scripts\EdgeInspector.cs" />
+    <Compile Include="Assets\Scripts\EditBehavior.cs" />
     <Compile Include="Assets\Scripts\EditorButtonScript.cs" />
     <Compile Include="Assets\Scripts\EventManager.cs" />
     <Compile Include="Assets\Scripts\ExitButton.cs" />
@@ -179,6 +181,7 @@
     <Compile Include="Assets\Scripts\ModelViewController.cs" />
     <Compile Include="Assets\Scripts\NodeInspector.cs" />
     <Compile Include="Assets\Scripts\OpenFileScript.cs" />
+    <Compile Include="Assets\Scripts\RunBehavior.cs" />
     <Compile Include="Assets\Scripts\SelectEdgeButton.cs" />
     <Compile Include="Assets\Scripts\SelectNodeButton.cs" />
     <Compile Include="Assets\Scripts\TabManager.cs" />

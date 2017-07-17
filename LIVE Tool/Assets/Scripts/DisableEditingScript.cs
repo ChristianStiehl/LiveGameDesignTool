@@ -1,4 +1,4 @@
-/******************************************************************************
+﻿/******************************************************************************
  * Copyright (c) 2013-2017, Amsterdam University of Applied Sciences (HvA), 
  * Firebrush Studios and Centrum Wiskunde & Informatica (CWI)
  * All rights reserved.
@@ -31,23 +31,51 @@
  *   * Christian Stiehl - christian.stiehl@hva.nl - HvA / Firebrush Studios
  *   * Riemer van Rozen - rozen@cwi.nl - HvA / CWI
  ******************************************************************************/
-===========================================================================================
-READ ME for the Live Game Design Tool 
-by Christian Stiehl
-version: 0.3
-===========================================================================================
 
-This READ ME is for a Unity Tool that can be used to create, import and export
-Micro-Machination Diagrams. The tool can be used standalone or be combined with a
-game. 
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
-===========================================================================================
+public class DisableEditingScript : MonoBehaviour
+{
+    public Button yourButton;
+    private GameObject[] tabs = null;
+    public GameObject addTabButton;
+    public GameObject diagramNameBar;
+    /// <summary>
+    /// Subscribes the OnClick function to the button on click.
+    /// </summary>
+    void Start()
+    {
+        Button btn = yourButton.GetComponent<Button>();
+        btn.onClick.AddListener(OnClick);
+    }
 
-Tool Keyboard Shortcuts:
-CTRL + M: Toggles the tool on or off (useful when intigrating the tool into a game)(location in code: ToggleTool.cs)
-CTRL + A: Adds new definition (tab) (location in code: TabManager.cs)
-CTRL + C: Copy (copies selected node) (locaiton in code: ModelViewController.cs)
-CTRL + V: Paste (pastes current copied node) (locaiton in code: ModelViewController.cs)
-CTRL + X: Cut (copies selected node & deletes it) (locaiton in code: ModelViewController.cs)
-Tab:  	  Cycles definitions (tabs) (location in code: Tabmanager.cs)
-Delete:   Deletes selected object (nodes/edges) (location in code: SelectNodeButton.cs & SelectEdgeButton.cs)
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void SetTabArray(GameObject[] newTabs)
+    {
+        tabs = newTabs;
+    }
+
+    void OnClick()
+    {
+        if(tabs == null)
+        {
+            tabs = GameObject.FindGameObjectsWithTag("GridTab");
+        }
+        foreach (GameObject tab in tabs)
+        {
+            tab.SetActive(true);
+            tab.transform.parent.gameObject.GetComponentInChildren<ModelViewController>().DisableEditing();
+        }
+        addTabButton.SetActive(false);
+        diagramNameBar.SetActive(false);
+        tabs = null;
+    }
+}

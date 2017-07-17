@@ -95,6 +95,7 @@ public class ModelViewController : MonoBehaviour
     public GameObject copiedNode;
     public GameObject tempNode;
     public RectTransform tab;
+    public bool editingEnabled = true;
     /// <summary>
     /// Finds some UI elements of the tool (canvas and node inspector) and starts listening to the "tabSelected" event
     /// </summary>
@@ -123,176 +124,181 @@ public class ModelViewController : MonoBehaviour
     /// </summary>
     void Update ()
     {
-        if(canvas.GetChild(canvas.childCount - 1) == grid)
+        if (editingEnabled)
         {
-            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.X))
+            if (canvas.GetChild(canvas.childCount - 1) == grid)
             {
-                if (copiedNode)
+                if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.X))
                 {
-                    Destroy(copiedNode);
-                }
-                if (selectedObject)
-                {
-                    copiedNode = Instantiate(selectedObject);
-                    copiedNode.GetComponent<SelectNodeButton>().isSelected = false;
-                    copiedNode.tag = "Copy";
-                    Destroy(selectedObject);
-                }
-            }
-            else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.C))
-            {
-                if (copiedNode)
-                {
-                    Destroy(copiedNode);
-                }
-                if (selectedObject)
-                {
-                    copiedNode = Instantiate(selectedObject);
-                    copiedNode.GetComponent<SelectNodeButton>().isSelected = false;
-                    copiedNode.tag = "Copy";
-                }
-            }
-            else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.V))
-            {
-                if (copiedNode)
-                {
-                    if (isMouseOverGrid())
+                    if (copiedNode)
                     {
-                        if (selectedObject)
+                        Destroy(copiedNode);
+                    }
+                    if (selectedObject)
+                    {
+                        copiedNode = Instantiate(selectedObject);
+                        copiedNode.GetComponent<SelectNodeButton>().isSelected = false;
+                        copiedNode.tag = "Copy";
+                        Destroy(selectedObject);
+                    }
+                }
+                else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.C))
+                {
+                    if (copiedNode)
+                    {
+                        Destroy(copiedNode);
+                    }
+                    if (selectedObject)
+                    {
+                        copiedNode = Instantiate(selectedObject);
+                        copiedNode.GetComponent<SelectNodeButton>().isSelected = false;
+                        copiedNode.tag = "Copy";
+                    }
+                }
+                else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.V))
+                {
+                    if (copiedNode)
+                    {
+                        if (isMouseOverGrid())
                         {
-                            selectedObject.GetComponent<SelectNodeButton>().Deselect();
-                            nodeInspector.Deselect();
+                            if (selectedObject)
+                            {
+                                selectedObject.GetComponent<SelectNodeButton>().Deselect();
+                                nodeInspector.Deselect();
+                            }
+                            GameObject pastedObj = Instantiate(copiedNode, Input.mousePosition, grid.transform.rotation, view) as GameObject;
+                            pastedObj.GetComponent<SelectNodeButton>().isSelected = true;
+                            nodeInspector.Select(pastedObj);
+                            pastedObj.tag = "Node";
+                            pastedObj.GetComponent<SelectNodeButton>().label.text += "(copy)";
+                            pastedObj.GetComponent<RectTransform>().SetAsLastSibling();
                         }
-                        GameObject pastedObj = Instantiate(copiedNode, Input.mousePosition, grid.transform.rotation, view) as GameObject;
-                        pastedObj.GetComponent<SelectNodeButton>().isSelected = true;
-                        nodeInspector.Select(pastedObj);
-                        pastedObj.tag = "Node";
-                        pastedObj.GetComponent<SelectNodeButton>().label.text += "(copy)";
-                        pastedObj.GetComponent<RectTransform>().SetAsLastSibling();
                     }
-                }
-                else if (GameObject.FindGameObjectWithTag("Copy"))
-                {
-                    copiedNode = GameObject.FindGameObjectWithTag("Copy");
-                    if (isMouseOverGrid())
+                    else if (GameObject.FindGameObjectWithTag("Copy"))
                     {
-                        if (selectedObject)
+                        copiedNode = GameObject.FindGameObjectWithTag("Copy");
+                        if (isMouseOverGrid())
                         {
-                            selectedObject.GetComponent<SelectNodeButton>().Deselect();
-                            nodeInspector.Deselect();
+                            if (selectedObject)
+                            {
+                                selectedObject.GetComponent<SelectNodeButton>().Deselect();
+                                nodeInspector.Deselect();
+                            }
+                            GameObject pastedObj = Instantiate(copiedNode, Input.mousePosition, grid.transform.rotation, view) as GameObject;
+                            pastedObj.GetComponent<SelectNodeButton>().isSelected = true;
+                            nodeInspector.Select(pastedObj);
+                            pastedObj.tag = "Node";
+                            pastedObj.GetComponent<SelectNodeButton>().label.text += "(copy)";
+                            pastedObj.GetComponent<RectTransform>().SetAsLastSibling();
                         }
-                        GameObject pastedObj = Instantiate(copiedNode, Input.mousePosition, grid.transform.rotation, view) as GameObject;
-                        pastedObj.GetComponent<SelectNodeButton>().isSelected = true;
-                        nodeInspector.Select(pastedObj);
-                        pastedObj.tag = "Node";
-                        pastedObj.GetComponent<SelectNodeButton>().label.text += "(copy)";
-                        pastedObj.GetComponent<RectTransform>().SetAsLastSibling();
                     }
                 }
-            }
-            if (Input.GetMouseButtonDown(0) && isMouseOverGrid())
-            {
-                EventManager.TriggerEvent("gridSelected");
-                somethingSelected = false;
-                GetComponent<ScrollRect>().enabled = true;
-                nodeInspector.Deselect();
-                edgeInspector.Deselect();
-            }
-            if (Input.GetMouseButtonDown(0) && !isMouseNotOverChildren(true))
-            {
-                if (selectedType != Behavior.Flow && selectedType != Behavior.State)
-                {
-                    if (selectedObject.GetComponent<SelectNodeButton>())
-                    {
-                        selectedObject.GetComponent<SelectNodeButton>().isSelected = true;
-                        nodeInspector.Select(selectedObject);
-                        edgeInspector.Deselect();
-                        selectedObject.GetComponent<RectTransform>().SetAsLastSibling();
-                        GetComponent<ScrollRect>().enabled = false;
-                    }
-                }
-            }
-            if (selectedType != Behavior.Mouse)
-            {
-                if (Input.GetMouseButtonDown(1) && isMouseOverGrid())
-                {
-                    nodeInspector.Deselect();
-                    ChangeType(Behavior.Mouse);
-                }
-                Vector3 mousePos = Input.mousePosition;
                 if (Input.GetMouseButtonDown(0) && isMouseOverGrid())
                 {
-                    if (selectedType == Behavior.Flow)
+                    EventManager.TriggerEvent("gridSelected");
+                    somethingSelected = false;
+                    GetComponent<ScrollRect>().enabled = true;
+                    nodeInspector.Deselect();
+                    edgeInspector.Deselect();
+                }
+                if (Input.GetMouseButtonDown(0) && !isMouseNotOverChildren(true))
+                {
+                    if (selectedType != Behavior.Flow && selectedType != Behavior.State)
                     {
-                        if (!addingToEdge)
+                        if (selectedObject.GetComponent<SelectNodeButton>())
                         {
-                            if (!isMouseNotOverChildren(true))
+                            selectedObject.GetComponent<SelectNodeButton>().isSelected = true;
+                            nodeInspector.Select(selectedObject);
+                            edgeInspector.Deselect();
+                            selectedObject.GetComponent<RectTransform>().SetAsLastSibling();
+                            GetComponent<ScrollRect>().enabled = false;
+                        }
+                    }
+                }
+                if (selectedType != Behavior.Mouse)
+                {
+                    if (Input.GetMouseButtonDown(1) && isMouseOverGrid())
+                    {
+                        nodeInspector.Deselect();
+                        ChangeType(Behavior.Mouse);
+                    }
+                    Vector3 mousePos = Input.mousePosition;
+                    if (Input.GetMouseButtonDown(0) && isMouseOverGrid())
+                    {
+                        if (selectedType == Behavior.Flow)
+                        {
+                            if (!addingToEdge)
                             {
-                                AddEdge(mousePos);
-                                tempEdge.GetComponent<SelectEdgeButton>().AddEdgePoint(mousePos, selectedObject);
-                                tempEdge.transform.SetAsFirstSibling();
-                                addingToEdge = true;
-                            }
-                            else
-                            {
-                                AddEdge(mousePos);
-                                tempEdge.GetComponent<SelectEdgeButton>().AddEdgePoint(mousePos, null);
-                                tempEdge.transform.SetAsFirstSibling();
-                                addingToEdge = true;
-                            }
+                                if (!isMouseNotOverChildren(true))
+                                {
+                                    AddEdge(mousePos);
+                                    tempEdge.GetComponent<SelectEdgeButton>().AddEdgePoint(mousePos, selectedObject);
+                                    tempEdge.transform.SetAsFirstSibling();
+                                    addingToEdge = true;
+                                }
+                                else
+                                {
+                                    AddEdge(mousePos);
+                                    tempEdge.GetComponent<SelectEdgeButton>().AddEdgePoint(mousePos, null);
+                                    tempEdge.transform.SetAsFirstSibling();
+                                    addingToEdge = true;
+                                }
 
-                        }
-                        else
-                        {
-                            if (!isMouseNotOverChildren(true))
-                            {
-                                tempEdge.GetComponent<SelectEdgeButton>().AddEdgePoint(mousePos, selectedObject);
-                                ChangeType(Behavior.Mouse);
                             }
                             else
                             {
-                                tempEdge.GetComponent<SelectEdgeButton>().AddEdgePoint(mousePos, null);
+                                if (!isMouseNotOverChildren(true))
+                                {
+                                    tempEdge.GetComponent<SelectEdgeButton>().AddEdgePoint(mousePos, selectedObject);
+                                    ChangeType(Behavior.Mouse);
+                                }
+                                else
+                                {
+                                    tempEdge.GetComponent<SelectEdgeButton>().AddEdgePoint(mousePos, null);
+                                }
                             }
                         }
-                    }
-                    else if (selectedType == Behavior.State)
-                    {
-                        if (!addingToState)
+                        else if (selectedType == Behavior.State)
                         {
-                            if (!isMouseNotOverChildren(true))
+                            if (!addingToState)
                             {
-                                AddState(mousePos);
-                                tempState.GetComponent<SelectEdgeButton>().AddEdgePoint(mousePos, selectedObject);
-                                tempState.transform.SetAsFirstSibling();
-                                addingToState = true;
+                                if (!isMouseNotOverChildren(true))
+                                {
+                                    AddState(mousePos);
+                                    tempState.GetComponent<SelectEdgeButton>().AddEdgePoint(mousePos, selectedObject);
+                                    tempState.transform.SetAsFirstSibling();
+                                    selectedObject = tempState;
+                                    addingToState = true;
+                                }
+                                else
+                                {
+                                    AddState(mousePos);
+                                    tempState.GetComponent<SelectEdgeButton>().AddEdgePoint(mousePos, null);
+                                    tempState.transform.SetAsFirstSibling();
+                                    addingToState = true;
+                                }
                             }
                             else
                             {
-                                AddState(mousePos);
-                                tempState.GetComponent<SelectEdgeButton>().AddEdgePoint(mousePos, null);
-                                tempState.transform.SetAsFirstSibling();
-                                addingToState = true;
+                                if (!isMouseNotOverChildren(true))
+                                {
+                                    tempState.GetComponent<SelectEdgeButton>().AddEdgePoint(mousePos, selectedObject);
+                                    ChangeType(Behavior.Mouse);
+                                }
+                                else
+                                {
+                                    tempState.GetComponent<SelectEdgeButton>().AddEdgePoint(mousePos, null);
+                                }
                             }
                         }
-                        else
+                        else if (isMouseNotOverChildren(false))
                         {
-                            if (!isMouseNotOverChildren(true))
-                            {
-                                tempState.GetComponent<SelectEdgeButton>().AddEdgePoint(mousePos, selectedObject);
-                                ChangeType(Behavior.Mouse);
-                            }
-                            else
-                            {
-                                tempState.GetComponent<SelectEdgeButton>().AddEdgePoint(mousePos, null);
-                            }
+                            AddNode(selectedType, mousePos);
+                            model.AddNode(selectedType, mousePos, tab.GetComponentInChildren<Text>().text, tempNode);
+                            nodeInspector.Select(tempNode);
+                            selectedObject = tempNode;
+                            tempNode.GetComponent<SelectNodeButton>().isSelected = true;
                         }
-                    }
-                    else if (isMouseNotOverChildren(false))
-                    {
-                        AddNode(selectedType, mousePos);
-                        model.AddNode(selectedType, mousePos, tab.GetComponentInChildren<Text>().text, tempNode);
-                        nodeInspector.Select(tempNode);
-                        tempNode.GetComponent<SelectNodeButton>().isSelected = true;
                     }
                 }
             }
@@ -316,6 +322,7 @@ public class ModelViewController : MonoBehaviour
                 tempEdge.GetComponent<SelectEdgeButton>().StopCurrentEdge();
                 model.AddEdge(Behavior.Flow, tab.GetComponentInChildren<Text>().text, tempEdge);
                 edgeInspector.Select(tempEdge);
+                tempEdge = null;
             }
             if (addingToState)
             {
@@ -323,6 +330,7 @@ public class ModelViewController : MonoBehaviour
                 tempState.GetComponent<SelectEdgeButton>().StopCurrentEdge();
                 model.AddEdge(Behavior.State, tab.GetComponentInChildren<Text>().text, tempState);
                 edgeInspector.Select(tempState);
+                tempState = null;
             }
         }
         if(type == Behavior.Mouse)
@@ -459,5 +467,36 @@ public class ModelViewController : MonoBehaviour
     public void AddState(Vector2 pos)
     {
         tempState = Instantiate(statePrefab, pos, grid.transform.rotation, view) as GameObject;
+    }
+
+    public void DisableEditing()
+    {
+        editingEnabled = false;
+        scrollRect.enabled = false;
+        view.GetComponent<ZoomContentScript>().enabled = false;
+        HideInspector();
+        DestroyUnfinishedEdges();
+    }
+
+    public void EnableEditing()
+    {
+        editingEnabled = true;
+        scrollRect.enabled = true;
+        view.GetComponent<ZoomContentScript>().enabled = true;
+        selectedType = Behavior.Mouse;
+    }
+
+    public void DestroyUnfinishedEdges()
+    {
+        if (tempEdge)
+        {
+            Destroy(tempEdge);
+        }
+        if (tempState)
+        {
+            Destroy(tempState);
+        }
+        addingToEdge = false;
+        addingToState = false;
     }
 }
