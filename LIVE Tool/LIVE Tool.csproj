@@ -81,6 +81,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MM-Live\DefinitionObserver.cs" />
+    <Compile Include="Assets\MM-Live\InstanceObserver.cs" />
+    <Compile Include="Assets\MM-Live\MMParser.cs" />
     <Compile Include="Assets\MM-Live\Machine.cs" />
     <Compile Include="Assets\MM-Live\Model\ActiveExp.cs" />
     <Compile Include="Assets\MM-Live\Model\AliasExp.cs" />
@@ -89,6 +92,7 @@
     <Compile Include="Assets\MM-Live\Model\BinExp.cs" />
     <Compile Include="Assets\MM-Live\Model\BooleanValExp.cs" />
     <Compile Include="Assets\MM-Live\Model\ConverterNodeBehavior.cs" />
+    <Compile Include="Assets\MM-Live\Model\Definable.cs" />
     <Compile Include="Assets\MM-Live\Model\Definition.cs" />
     <Compile Include="Assets\MM-Live\Model\DrainNodeBehavior.cs" />
     <Compile Include="Assets\MM-Live\Model\Edge.cs" />
@@ -137,6 +141,7 @@
     <Compile Include="Assets\MM-Live\RMPatch\DeltaListener.cs" />
     <Compile Include="Assets\MM-Live\RMPatch\DeltaParser.cs" />
     <Compile Include="Assets\MM-Live\RMPatch\Edit.cs" />
+    <Compile Include="Assets\MM-Live\RMPatch\Effect.cs" />
     <Compile Include="Assets\MM-Live\RMPatch\Field.cs" />
     <Compile Include="Assets\MM-Live\RMPatch\Index.cs" />
     <Compile Include="Assets\MM-Live\RMPatch\Insert.cs" />
@@ -161,11 +166,13 @@
     <Compile Include="Assets\MM-Live\Runtime\ExpEvaluator.cs" />
     <Compile Include="Assets\MM-Live\Runtime\ExpVisitor.cs" />
     <Compile Include="Assets\MM-Live\Runtime\Machinable.cs" />
+    <Compile Include="Assets\MM-Live\Runtime\Migrator.cs" />
     <Compile Include="Assets\MM-Live\Runtime\Resolver.cs" />
     <Compile Include="Assets\MM-Live\Runtime\Visitor.cs" />
     <Compile Include="Assets\MM-Live\State\Instance.cs" />
     <Compile Include="Assets\MM-Live\State\NodeInstance.cs" />
     <Compile Include="Assets\MM-Live\State\PoolNodeInstance.cs" />
+    <Compile Include="Assets\MM-Live\State\Runnable.cs" />
     <Compile Include="Assets\Scripts\CloseTab.cs" />
     <Compile Include="Assets\Scripts\ConsoleScript.cs" />
     <Compile Include="Assets\Scripts\DefinitionScript.cs" />
