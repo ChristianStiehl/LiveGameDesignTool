@@ -41,13 +41,17 @@ This READ ME is for a Unity Tool that can be used to create, import and export
 Micro-Machination Diagrams. The tool can be used standalone or be combined with a
 game. 
 
+The executable of the tool is built for Windows 10.
+
+The tool is made in Unity version 5.5.1f1
+
 ===========================================================================================
 
 Tool Keyboard Shortcuts:
-CTRL + M: Toggles the tool on or off (useful when intigrating the tool into a game)(location in code: ToggleTool.cs)
+CTRL + M: Toggles the tool on or off (useful when integrating the tool into a game)(location in code: ToggleTool.cs)
 CTRL + A: Adds new definition (tab) (location in code: TabManager.cs)
-CTRL + C: Copy (copies selected node) (locaiton in code: ModelViewController.cs)
-CTRL + V: Paste (pastes current copied node) (locaiton in code: ModelViewController.cs)
-CTRL + X: Cut (copies selected node & deletes it) (locaiton in code: ModelViewController.cs)
+CTRL + C: Copy (copies selected node) (location in code: ModelViewController.cs)
+CTRL + V: Paste (pastes current copied node) (location in code: ModelViewController.cs)
+CTRL + X: Cut (copies selected node & deletes it) (location in code: ModelViewController.cs)
 Tab:  	  Cycles definitions (tabs) (location in code: Tabmanager.cs)
 Delete:   Deletes selected object (nodes/edges) (location in code: SelectNodeButton.cs & SelectEdgeButton.cs)

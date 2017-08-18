@@ -44,6 +44,7 @@ public class RunBehavior : MonoBehaviour {
     public EditBehavior eb;
     public DisableEditingScript fb, gb;
     public GameObject diagramNameBar;
+    public GameObject branchPrefab;
     /// <summary>
     /// Subscribes the OnClick function to the button on click.
     /// </summary>
