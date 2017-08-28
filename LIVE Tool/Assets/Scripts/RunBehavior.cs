@@ -37,47 +37,73 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RunBehavior : MonoBehaviour {
-    public Button yourButton;
-    private GameObject[] tabs = new GameObject[0];
-    public GameObject addTabButton;
-    public EditBehavior eb;
-    public DisableEditingScript fb, gb;
-    public GameObject diagramNameBar;
-    public GameObject branchPrefab;
-    /// <summary>
-    /// Subscribes the OnClick function to the button on click.
-    /// </summary>
-    void Start()
+namespace MM
+{
+    public class RunBehavior : MonoBehaviour
     {
-        Button btn = yourButton.GetComponent<Button>();
-        btn.onClick.AddListener(OnClick);
-        eb = GameObject.FindGameObjectWithTag("EditTab").GetComponent<EditBehavior>();
-        fb = GameObject.FindGameObjectWithTag("FileTab").GetComponent<DisableEditingScript>();
-        gb = GameObject.FindGameObjectWithTag("GraphTab").GetComponent<DisableEditingScript>();
-    }
-
-    // Update is called once per frame
-    void Update ()
-    {
-		
-	}
-
-    void OnClick()
-    {
-        if(diagramNameBar.activeSelf == false)
+        public Button yourButton;
+        private GameObject[] tabs = new GameObject[0];
+        public GameObject addTabButton;
+        public EditBehavior eb;
+        public DisableEditingScript fb, gb;
+        public GameObject diagramNameBar;
+        public GameObject branchPrefab;
+        private Vector3 position = new Vector3(300, 100, 0);
+        private Quaternion rotation = new Quaternion(0, 0, 0, 0);
+        /// <summary>
+        /// Subscribes the OnClick function to the button on click.
+        /// </summary>
+        void Start()
         {
-            tabs = GameObject.FindGameObjectsWithTag("GridTab");
-            eb.SetTabArray(tabs);
-            fb.SetTabArray(tabs);
-            gb.SetTabArray(tabs);
-            foreach (GameObject tab in tabs)
+            Button btn = yourButton.GetComponent<Button>();
+            btn.onClick.AddListener(OnClick);
+            eb = GameObject.FindGameObjectWithTag("EditTab").GetComponent<EditBehavior>();
+            fb = GameObject.FindGameObjectWithTag("FileTab").GetComponent<DisableEditingScript>();
+            gb = GameObject.FindGameObjectWithTag("GraphTab").GetComponent<DisableEditingScript>();
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        void OnClick()
+        {
+            if (diagramNameBar.activeSelf == false)
             {
-                tab.SetActive(false);
-                tab.transform.parent.gameObject.GetComponentInChildren<ModelViewController>().DisableEditing();
+                tabs = GameObject.FindGameObjectsWithTag("GridTab");
+                eb.SetTabArray(tabs);
+                fb.SetTabArray(tabs);
+                gb.SetTabArray(tabs);
+                foreach (GameObject tab in tabs)
+                {
+                    tab.SetActive(false);
+                    tab.transform.parent.gameObject.GetComponentInChildren<ModelViewController>().DisableEditing();
+                }
+                addTabButton.SetActive(false);
+                diagramNameBar.SetActive(true);
             }
-            addTabButton.SetActive(false);
-            diagramNameBar.SetActive(true);
+            /*create tree here
+            //get all definitions and their objects??
+            GameObject temp;
+
+            //for each definition and object:
+            temp = Instantiate(branchPrefab, position, rotation, parent) as GameObject;
+
+            //fix offset for next prefab:
+            position.y += 50;
+            
+            //set text field to name of definition/object:
+            temp.GetComponentInChildren<Text>().text = name;
+
+            //if object/definition does not have children: (disables +/- button)
+            temp.transform.GetChild(0).gameObject.SetActive(false);
+            
+            */
+            GameObject temp;
         }
     }
 }
+
+

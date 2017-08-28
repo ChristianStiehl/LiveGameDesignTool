@@ -195,6 +195,7 @@
     <Compile Include="Assets\Scripts\TabText.cs" />
     <Compile Include="Assets\Scripts\ToggleTool.cs" />
     <Compile Include="Assets\Scripts\ZoomContentScript.cs" />
+    <Compile Include="Assets\disableChildrenButton.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
